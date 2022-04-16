@@ -4,11 +4,12 @@ export default EStyleSheet.create({
     container:{
         backgroundColor: '$background', // Variável global
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        flexDirection: 'column'
     },
     areaLogin:{
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     inputs:{
         backgroundColor: '#fff',
@@ -24,11 +25,11 @@ export default EStyleSheet.create({
         height: "2.4rem",
         alignItems: 'center',
         justifyContent: "center",
-        borderRadius: 5
+        borderRadius: 5,
     },
     txtLogin:{
         fontSize: "1rem",
-        color: "#fff"
+        color: "#fff",
     }
     
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './sources/pages/Login';
+import TelaInicial from './sources/pages/TelaInicial';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default function AgenteParceiro() {
@@ -16,6 +17,11 @@ export default function AgenteParceiro() {
       component={Login}
       options={{headerShown: false}}
       />
+      <Stack.Screen 
+      name="TelaInicial" 
+      component={TelaInicial}
+      options={{headerShown: false}}
+      />
     </Stack.Navigator>
   </NavigationContainer>
   );
@@ -23,5 +29,6 @@ export default function AgenteParceiro() {
 
 EStyleSheet.build({ // VARIÁVEIS GLOBAIS
   $background: '#0086FE',
-  $PrimaryBTN: "#58c22e"
+  $PrimaryBTN: "#58c22e",
+  $txtcolor: '#FFF'
 })
