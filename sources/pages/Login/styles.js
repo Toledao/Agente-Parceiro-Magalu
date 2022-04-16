@@ -1,0 +1,35 @@
+import EStyleSheet from 'react-native-extended-stylesheet';
+
+export default EStyleSheet.create({
+    container:{
+        backgroundColor: '$background', // Variável global
+        justifyContent: 'center',
+        flex: 1
+    },
+    areaLogin:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    inputs:{
+        backgroundColor: '#fff',
+        width: "17rem",
+        height: "2.8rem",
+        borderRadius: 4,
+        paddingHorizontal: "0.5rem",
+        marginBottom: "1.8rem"
+    },
+    btnLogin:{
+        backgroundColor: '$PrimaryBTN', // VARIÁVEL GLOBAL que está no app.js na pasta inicial
+        width: "10rem",
+        height: "2.4rem",
+        alignItems: 'center',
+        justifyContent: "center",
+        borderRadius: 5
+    },
+    txtLogin:{
+        fontSize: "1rem",
+        color: "#fff"
+    }
+    
+
+})
