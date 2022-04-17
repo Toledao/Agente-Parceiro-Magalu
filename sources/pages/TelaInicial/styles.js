@@ -10,8 +10,8 @@ export default EStyleSheet.create({
         marginHorizontal: "1.5rem"
     },
     areaAtalhos:{
-        flex: 1.2,
-        backgroundColor: "#354",
+        flex: 1.4,
+        // backgroundColor: "$background",
         paddingVertical: '0.8rem',
         paddingHorizontal: '0.8rem'
     },
@@ -21,7 +21,7 @@ export default EStyleSheet.create({
     },
     scrollVisitas:{
         flex: 4,
-        backgroundColor: "#384"
+        // backgroundColor: "#384"
     },
     txtAgente:{
         color: "$txtcolor",

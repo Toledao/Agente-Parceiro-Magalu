@@ -13,7 +13,7 @@ export default EStyleSheet.create({
     },
     inputs:{
         backgroundColor: '#fff',
-        width: "17rem",
+        width: "20rem", //Estava 17rem, Eu achei pequeno de mais, mas qualquer coisa so botar o antigo.. Att: João
         height: "2.8rem",
         borderRadius: 4,
         paddingHorizontal: "0.5rem",
@@ -26,6 +26,9 @@ export default EStyleSheet.create({
         alignItems: 'center',
         justifyContent: "center",
         borderRadius: 5,
+    },
+    loginimagem:{
+        height: '40%'
     },
     txtLogin:{
         fontSize: "1rem",
