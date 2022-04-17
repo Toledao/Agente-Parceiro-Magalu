@@ -6,22 +6,19 @@ export default EStyleSheet.create({
         flex: 1,
     },
     areaHeader:{
-        flex: 0.8,
+        flex: 0.3,
         marginHorizontal: "1.5rem"
     },
     areaAtalhos:{
-        flex: 1.3,
-        // backgroundColor: "$background",
+        flex: 0.35,
         paddingVertical: '0.8rem',
-        paddingHorizontal: '0.8rem'
+        // paddingHorizontal: '0.8rem'
     },
     areaRoteiro:{
-        flex: 1,
-        // backgroundColor: "#324"
+        flex: 0.35,
     },
     scrollVisitas:{
-        flex: 4,
-        // backgroundColor: "#384"
+        flex: 1,
     },
     txtAgente:{
         color: "$txtcolor",
@@ -41,18 +38,17 @@ export default EStyleSheet.create({
         flex: 1,
     },
     card:{
-        width: '16.5rem',
+        width: '17rem',
         backgroundColor: "#FFF",
         borderRadius: 6,
-        padding: "0.6rem",
+        padding: "0.2rem",
         flexDirection: 'row',
         alignItems: 'center',
     },
     view:{
         flexDirection: 'row',
         marginBottom: '0.3rem',
-        width: '100%',
-        marginHorizontal: '5%'
+        marginHorizontal: '1rem'
     },
     addicon:{
         width: '25%',
@@ -62,12 +58,12 @@ export default EStyleSheet.create({
         width: '75%',
         textAlign: 'center',
         color: 'black',
-        fontSize: '1.2rem'
+        fontSize: '1rem'
     },
     searchIcon:{
         alignSelf: 'center',
-        width: '20%',
-        textAlign: 'right',
+        width: '25%',
+        textAlign: 'center',
         padding: '1%'
     },
     txtRoteiroHoje:{
