@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, SafeAreaView, Text, Scrollview } from 'react-native';
 import Styles from './styles';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 import AtalhosIcon from '../../components/AtalhosIcon';
-import ScrollVisitas from '../../components/ScrollVisitas'
+import ScrollVisitas from '../../components/ScrollVisitas';
+import RoteiroVisitas from '../../components/RoteiroVisitas';
 import { useNavigation } from '@react-navigation/native';
 
 export default function TelaInicial() {
@@ -21,9 +22,9 @@ export default function TelaInicial() {
        <View style={Styles.areaAtalhos}>
             <AtalhosIcon/>
        </View>
-       <View style={Styles.areaRoteiro}>
-           <Text>Roteiro de Visita</Text>
-       </View>
+       {/* <View style={Styles.areaRoteiro}>
+           <RoteiroVisitas/>
+       </View> */}
        <View style={Styles.scrollVisitas}>
             <ScrollVisitas/>
        </View>

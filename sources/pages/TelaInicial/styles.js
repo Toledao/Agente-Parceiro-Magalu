@@ -17,7 +17,7 @@ export default EStyleSheet.create({
     },
     areaRoteiro:{
         flex: 1,
-        backgroundColor: "#324"
+        // backgroundColor: "#324"
     },
     scrollVisitas:{
         flex: 4,
