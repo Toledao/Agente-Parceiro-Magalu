@@ -4,12 +4,12 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';
 
-export default function ScrollVisitas(param) {
+export default function ScrollVisitas({data}) {
     const navigation = useNavigation()
 
-    var Nome = param.nome
-    var Bairro = param.bairro
-    var Horario = param.horario
+    var Nome = data.nome
+    var Bairro = data.bairro
+    var Horario = data.horario
 
     return (
         <TouchableOpacity style={Styles.card}>  
