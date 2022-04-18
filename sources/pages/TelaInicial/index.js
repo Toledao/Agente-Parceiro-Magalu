@@ -30,7 +30,7 @@ export default function TelaInicial() {
                 Roteiro de Hoje - Dia 17/04/2022
             </Text>
         <View style={Styles.view}>
-            <TouchableOpacity style={Styles.card}>
+            <TouchableOpacity style={Styles.card} onPress={() => navigation.navigate('ListaParceiro')}>
                 <Icon name="add" style={Styles.addicon} size={34} color={'#000'}/>
                 <Text style={Styles.txtaddvisita}>Nova Visita</Text>
             </TouchableOpacity>
