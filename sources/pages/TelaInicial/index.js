@@ -54,6 +54,7 @@ export default function TelaInicial() {
             <Text style={Styles.txtRoteiroHoje}>
                 Roteiro de Hoje - Dia {moment().format('L')}
             </Text>
+
             <View style={isSearching ?  Styles.procura : {display: 'none'}}>
                 <TextInput style={isSearching ? Styles.inputs: {display: 'none'}} placeholder="Texto de Pesquisa" placeholderTextColor={'#FFF'}/>
             </View>
