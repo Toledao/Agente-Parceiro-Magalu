@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView} from 'react-native';
+import { View, Text, TouchableOpacity} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';
@@ -22,9 +22,9 @@ export default function ScrollVisitas({data}) {
             </View>
 
             <View style={Styles.icons}>
-                <Icon name="information-circle-outline" size={60} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
-                <Icon name="list" size={60} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
-                <Icon name="create" size={60} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="create-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="list" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="information-circle-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
                 {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             </View>
         </TouchableOpacity>
@@ -37,27 +37,26 @@ const Styles = EStyleSheet.create({
         borderRadius: 20,
         padding: 10,
         marginVertical: '0.3rem',
-        marginHorizontal: '5%'
+        marginHorizontal: '1rem'
     },
     descricao:{
-        height: '3rem',
-        flexWrap: 'wrap',
-        alignContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: "space-between",
         padding: 5
     },
     txtParceiro:{
         color: 'black',
-        fontSize: 30,
+        fontWeight: '400',
+        fontSize: '1.2rem',
         alignSelf: 'center'
     },
     txtdesc:{
         color: 'black',
-        fontSize: 18,
+        fontSize: '0.8rem',
     },
     icons:{
-        height: '4rem',
-        flexWrap: 'wrap',
-        alignContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: "space-between",
         paddingHorizontal: 5
     },
     icon:{

@@ -14,7 +14,7 @@ export default function AtalhosIcon() {
         <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Detalhes')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
-                <Icon name="list" size={60}/>
+                <Icon name="list" size={40}/>
             </View>
             <Text style={Styles.txtAtalho}> Checklist Avulso </Text>
         </TouchableOpacity>
@@ -24,7 +24,7 @@ export default function AtalhosIcon() {
         <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
-                <Icon name="beer-outline" size={60}/>
+                <Icon name="beer-outline" size={40}/>
             </View>
             <Text style={Styles.txtAtalho}> Checklist Avulso 2 </Text>
         </TouchableOpacity>
@@ -34,7 +34,7 @@ export default function AtalhosIcon() {
         <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
-                <Icon name="beer-outline" size={60}/>
+                <Icon name="beer-outline" size={40}/>
             </View>
             <Text style={Styles.txtAtalho}> Checklist Avulso 3 </Text>
         </TouchableOpacity>
@@ -44,7 +44,7 @@ export default function AtalhosIcon() {
         <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
-                <Icon name="beer-outline" size={60}/>
+                <Icon name="beer-outline" size={40}/>
             </View>
             <Text style={Styles.txtAtalho}> Checklist Avulso 4</Text>
         </TouchableOpacity>
@@ -54,7 +54,7 @@ export default function AtalhosIcon() {
         <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
-                <Icon name="beer-outline" size={60}/>
+                <Icon name="beer-outline" size={40}/>
             </View>
             <Text style={Styles.txtAtalho}> Checklist Avulso 5</Text>
         </TouchableOpacity>
@@ -73,8 +73,8 @@ const Styles = EStyleSheet.create({
         paddingHorizontal: '1rem'
     },
     areaIMG:{
-        width: "5rem",
-        height: "5rem",
+        width: "4rem",
+        height: "4rem",
         backgroundColor: "#FFF",
         borderRadius: "2.5rem",
         justifyContent: 'center',
@@ -82,8 +82,8 @@ const Styles = EStyleSheet.create({
     },
     txtAtalho:{
         color: "$txtcolor",
-        width: "5rem",
+        width: "4.5rem",
         textAlign: 'center',
-        marginTop: '0.4rem'
+        marginTop: '0.3rem'
     }
 })
