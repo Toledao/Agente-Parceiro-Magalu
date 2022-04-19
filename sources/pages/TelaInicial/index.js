@@ -59,7 +59,7 @@ export default function TelaInicial() {
                 <TextInput style={isSearching ? Styles.inputs: {display: 'none'}} placeholder="Texto de Pesquisa" placeholderTextColor={'#FFF'}/>
             </View>
             <View style={isSearching ? {display: 'none'} :Styles.view}>
-                <TouchableOpacity style={Styles.card}>
+                <TouchableOpacity style={Styles.card} onPress={() => navigation.navigate("ListaParceiro")}>
                     <Icon name="add" style={Styles.addicon} size={30} color={'#000'}/>
                     <Text style={Styles.txtaddvisita}>Nova Visita</Text>
                 </TouchableOpacity>
