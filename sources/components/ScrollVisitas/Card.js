@@ -22,9 +22,9 @@ export default function ScrollVisitas({data}) {
             </View>
 
             <View style={Styles.icons}>
-                <Icon name="information-circle-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="create-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
                 <Icon name="list" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
-                <Icon name="create" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="information-circle-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
                 {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             </View>
         </TouchableOpacity>
