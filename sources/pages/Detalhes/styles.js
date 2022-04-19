@@ -2,18 +2,18 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 const Styles = EStyleSheet.create({
     container:{
-        flex: 1,
+        flex: 4,
         backgroundColor: '$background'
     },
     areaCliente:{
-        flex: 1,
+        flex: 4,
         backgroundColor: '$background',
         paddingHorizontal: '1.5rem',
         paddingTop: '1.3rem'
     },
     areaDetalhes:{
         backgroundColor: '#E5E5E5',
-        flex: 4.8,
+        flex: 16,
         borderTopLeftRadius: '0.5rem',
         borderTopRightRadius: '0.5rem',
         alignItems: "center"
@@ -28,11 +28,13 @@ const Styles = EStyleSheet.create({
         fontWeight: 'bold'
     },
     areaResponsavel:{
-        marginTop: '1.5rem'
+        flex: 3,
+        marginTop: '1.3rem',
     },
     areaEndereco:{
-        marginTop: '2.5rem',
-        width: '73%'
+        marginTop: '2rem',
+        width: '73%',
+        flex: 23
     },
     txtresultResp:{
         fontSize: '1.4rem',
@@ -79,7 +81,8 @@ const Styles = EStyleSheet.create({
         borderRadius: '0.4rem',
         alignItems: 'center',
         justifyContent: "center",
-        marginTop: '4rem'
+        marginBottom: '1.2rem',
+        flex: 3
     },
     txtCheckList:{
         color: '$txtcolor',
