@@ -19,7 +19,7 @@ export default function Login() {
    <SafeAreaView style={Styles.container}>
        <View style={Styles.areaLogin}>
         <View style={Styles.loginimagem}>
-          <Image/> 
+          <Image source={require('../../components/Logos/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
           {/* Colocar Imagem Aqui */}
         </View>
 

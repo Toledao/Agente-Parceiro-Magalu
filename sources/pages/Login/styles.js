@@ -28,7 +28,8 @@ export default EStyleSheet.create({
         borderRadius: 5,
     },
     loginimagem:{
-        height: '40%'
+        height: '40%',
+        marginBottom: '2rem'
     },
     txtLogin:{
         fontSize: "1rem",
