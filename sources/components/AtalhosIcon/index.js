@@ -82,7 +82,7 @@ const Styles = EStyleSheet.create({
     },
     txtAtalho:{
         color: "$txtcolor",
-        width: "4.5rem",
+        width: "4rem",
         textAlign: 'center',
         marginTop: '0.3rem'
     }

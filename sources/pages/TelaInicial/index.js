@@ -6,8 +6,10 @@ import AtalhosIcon from '../../components/AtalhosIcon';
 import Card from '../../components/ScrollVisitas/Card'
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
+import 'moment/locale/pt-br'
 
 export default function TelaInicial() {
+
     const navigation = useNavigation()
     const [arrayRoteiro, setarrayRoteiro] = useState([
         {id: 1, nome:"Nome Parceiro1", horario: "16:00", bairro: "Jardim Bla"},
@@ -16,7 +18,7 @@ export default function TelaInicial() {
         {id: 4, nome:"Nome Parceiro4", horario: "16:00", bairro: "Jardim Bla"},
     ])
 
-    moment.locale('pt-br');
+    const [arrayRoteiroFiltrado, setArrayRoteiroFiltrado] = useState(arrayRoteiro)
 
     const [isSearching, setIsSearching] = useState(false);
 
@@ -28,6 +30,17 @@ export default function TelaInicial() {
         setIsSearching(false)
         Keyboard.dismiss()
     }
+
+    function procuraParceiro(algo){
+        const array = []
+        arrayRoteiro.forEach(element => {
+            if(element.nome.toLowerCase().includes(algo.toLowerCase())){
+                array.push(element)
+            }
+        });
+        setArrayRoteiroFiltrado(array)
+    }
+
 
  return (
     <SafeAreaView style={Styles.container}>
@@ -56,7 +69,8 @@ export default function TelaInicial() {
             </Text>
 
             <View style={isSearching ?  Styles.procura : {display: 'none'}}>
-                <TextInput style={isSearching ? Styles.inputs: {display: 'none'}} placeholder="Texto de Pesquisa" placeholderTextColor={'#FFF'}/>
+                <TextInput style={isSearching ? Styles.inputs: {display: 'none'}} placeholder="Texto de Pesquisa" placeholderTextColor={'#FFF'} 
+                            onChangeText={procuraParceiro} clearButtonMode='always' />
             </View>
             <View style={isSearching ? {display: 'none'} :Styles.view}>
                 <TouchableOpacity style={Styles.card} onPress={() => navigation.navigate("ListaParceiro")}>
@@ -71,7 +85,7 @@ export default function TelaInicial() {
         {/* <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={Styles.scrollVisitas}> */}
             <View style={Styles.scrollVisitas}>
                 <FlatList
-                data={arrayRoteiro}
+                data={arrayRoteiroFiltrado}
                 keyboardDismissMode = {true}
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(item) => item.id}
