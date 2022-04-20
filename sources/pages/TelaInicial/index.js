@@ -29,6 +29,7 @@ export default function TelaInicial() {
     function btnvoltar(){
         setIsSearching(false)
         Keyboard.dismiss()
+        setArrayRoteiroFiltrado(arrayRoteiro)
     }
 
     function procuraParceiro(algo){
