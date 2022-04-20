@@ -6,6 +6,7 @@ import Detalhes from './sources/pages/Detalhes';
 import TelaInicial from './sources/pages/TelaInicial';
 import ListaParceiro from './sources/pages/ListaParceiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import CheckList from './sources/pages/CheckList';
 
 export default function AgenteParceiro() {
 
@@ -50,6 +51,20 @@ export default function AgenteParceiro() {
       headerShown: true,
       headerShadowVisible: false,
       headerBackTitle: 'Voltar'
+         }}
+      />
+      <Stack.Screen 
+      name="CheckList" 
+      component={CheckList}
+      options={{ 
+      title: 'CheckList',
+      headerStyle:{
+        backgroundColor: '#0086FE'
+      },
+      headerTintColor: '#FFF',
+      headerShown: true,
+      headerShadowVisible: false,
+      headerBackTitle: 'Voltar',
          }}
       />
     </Stack.Navigator>
