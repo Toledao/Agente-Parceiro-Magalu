@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
-import { View, SafeAreaView, Text, ScrollView, TextInput, FlatList, KeyboardAvoidingView } from 'react-native';
-import Styles from './Styles';
+import { View, SafeAreaView, Text, ScrollView, TextInput, FlatList, TouchableOpacity } from 'react-native';
+import Styles from './styles';
 import SelectMultiple from 'react-native-select-multiple'
 
 export default function CheckList() {
@@ -119,8 +119,13 @@ export default function CheckList() {
                </View>
           }
           />
+          <View style={Styles.AreaBTN}>
+               <TouchableOpacity style={Styles.btnCheckList}>
+               <Text style={Styles.txtCheckList}>Finalizar CheckList</Text>
+               </TouchableOpacity>
+          </View>
      </SafeAreaView>
-     <SafeAreaView style={{flex: 0, backgroundColor: '#FFF'}}/> 
+
    </Fragment>
   );
 }
