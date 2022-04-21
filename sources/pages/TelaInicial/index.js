@@ -32,10 +32,10 @@ export default function TelaInicial() {
         setArrayRoteiroFiltrado(arrayRoteiro)
     }
 
-    function procuraParceiro(algo){
+    function procuraParceiro(nome){
         const array = []
         arrayRoteiro.forEach(element => {
-            if(element.nome.toLowerCase().includes(algo.toLowerCase())){
+            if(element.nome.toLowerCase().includes(nome.toLowerCase())){
                 array.push(element)
             }
         });
