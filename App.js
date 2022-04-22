@@ -7,6 +7,8 @@ import TelaInicial from './sources/pages/TelaInicial';
 import ListaParceiro from './sources/pages/ListaParceiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
+import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
+import Agentes from './sources/pages/Administrativo/Agentes';
 
 export default function AgenteParceiro() {
 
@@ -66,6 +68,25 @@ export default function AgenteParceiro() {
       headerShadowVisible: false,
       headerBackTitle: 'Voltar',
          }}
+      />
+      <Stack.Screen 
+      name="TelaInicialADM" 
+      component={TelaInicialADM}
+      options={{headerShown: false}}
+      />
+      <Stack.Screen 
+      name="Agentes" 
+      component={Agentes}
+      options={{ 
+        title: '',
+        headerStyle:{
+          backgroundColor: '#0086FE'
+        },
+        headerTintColor: '#FFF',
+        headerShown: true,
+        headerShadowVisible: false,
+        headerBackTitle: 'Voltar',
+           }}
       />
     </Stack.Navigator>
   </NavigationContainer>

@@ -7,7 +7,8 @@ export default EStyleSheet.create({
     },
     areaLogo:{
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '10%'
     },
     areaHeader:{
         flex: 4,

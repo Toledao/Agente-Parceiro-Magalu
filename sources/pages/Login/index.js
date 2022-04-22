@@ -12,7 +12,7 @@ export default function Login() {
     //Fazer o login
 
 
-    navigation.navigate('TelaInicial')
+    navigation.navigate('TelaInicialADM')
   }
 
  return (
