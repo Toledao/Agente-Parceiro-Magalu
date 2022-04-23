@@ -7,9 +7,11 @@ import Card from '../../components/ScrollVisitas/Card'
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import 'moment/locale/pt-br'
+import { useSelector } from 'react-redux';
+
 
 export default function TelaInicial() {
-
+    const nomelogin = useSelector(state => state.Login.nome)
     const navigation = useNavigation()
     const [arrayRoteiro, setarrayRoteiro] = useState([
         {id: 1, nome:"Nome Parceiro1", horario: "16:00", bairro: "Jardim Bla"},
@@ -51,7 +53,7 @@ export default function TelaInicial() {
         <View style={isSearching ? { display:'none' } : Styles.areaHeader}>
             <Text style={Styles.txtAgente}>Agente</Text>
             <View style={Styles.areaAgenteExit}>
-                <Text style={Styles.txtnomeAgente}>Raul Teixeira</Text>
+                <Text style={Styles.txtnomeAgente}>{nomelogin}</Text>
                 <Icon name="log-out-outline" size={36} color="#FFF" style={Styles.logoutIcon} onPress={() => navigation.navigate('Login')}/>
             </View>
         </View>
@@ -83,19 +85,17 @@ export default function TelaInicial() {
                 </TouchableOpacity>
             </View>
         </View>
-        {/* <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={Styles.scrollVisitas}> */}
-            <View style={Styles.scrollVisitas}>
-                <FlatList
-                data={arrayRoteiroFiltrado}
-                keyboardDismissMode = {true}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(item) => item.id}
-                renderItem={ ({item}) =>
-                    <Card data={item} />
-                }
-                />
-            </View>
-        {/* </KeyboardAvoidingView> */}
+        <View style={Styles.scrollVisitas}>
+            <FlatList
+            data={arrayRoteiroFiltrado}
+            keyboardDismissMode = {true}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            renderItem={ ({item}) =>
+                <Card data={item} />
+            }
+            />
+        </View>
    </SafeAreaView>
   );
 }
