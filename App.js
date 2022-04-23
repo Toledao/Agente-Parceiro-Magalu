@@ -7,7 +7,8 @@ import TelaInicial from './sources/pages/TelaInicial';
 import ListaParceiro from './sources/pages/ListaParceiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Provider } from 'react-redux';
-import store from './sources/store';
+import store, {persistor} from './sources/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function AgenteParceiro() {
 
@@ -15,48 +16,50 @@ export default function AgenteParceiro() {
 
  return (
   <Provider store={store}>
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen 
-        name="Login" 
-        component={Login}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen 
-        name="TelaInicial" 
-        component={TelaInicial}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen 
-        name="Detalhes" 
-        component={Detalhes}
-        options={{ 
-        title: 'Detalhes do Parceiro',
-        headerStyle:{
-          backgroundColor: '#0086FE'
-        },
-        headerTintColor: '#FFF',
-        headerShown: true,
-        headerShadowVisible: false,
-        headerBackTitle: 'Voltar'
-          }}
-        />
-        <Stack.Screen 
-        name="ListaParceiro" 
-        component={ListaParceiro}
-        options={{ 
-        title: '',
-        headerStyle:{
-          backgroundColor: '#0086FE'
-        },
-        headerTintColor: '#FFF',
-        headerShown: true,
-        headerShadowVisible: false,
-        headerBackTitle: 'Voltar'
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PersistGate persistor={persistor}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Login'>
+          <Stack.Screen 
+          name="Login" 
+          component={Login}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="TelaInicial" 
+          component={TelaInicial}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Detalhes" 
+          component={Detalhes}
+          options={{ 
+          title: 'Detalhes do Parceiro',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+            }}
+          />
+          <Stack.Screen 
+          name="ListaParceiro" 
+          component={ListaParceiro}
+          options={{ 
+          title: '',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PersistGate>
   </Provider>
   );
 }

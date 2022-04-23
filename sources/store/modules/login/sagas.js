@@ -7,7 +7,6 @@ import * as types from '../types'
 const requisicao = (email,senha) => 
     new Promise((resolve, reject) => {
         setTimeout(()=>{
-            console.log(email,senha)
             if(email == 'joao@tome.com' && senha == '123'){
                 resolve({nome: "JoaoTome", id: "asd123", tipo: 1});
             }else{
@@ -21,7 +20,6 @@ function* loginRequest({ payload }){
         const {email, senha} = payload
         const response = yield call(requisicao,email,senha);
         yield put(action.logarSuccess(response));
-        
     } catch (error){
         console.log(error)
         yield put(action.logarFailure());
