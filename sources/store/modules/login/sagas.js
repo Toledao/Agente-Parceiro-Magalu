@@ -1,15 +1,15 @@
 import { call, put, all, takeLatest} from 'redux-saga/effects'
-import { useNavigation } from '@react-navigation/native';
 import * as action from './actions'
 import * as types from '../types'
 
 
-
+// Isso aqui é uma simulação de response da api
 const requisicao = (email,senha) => 
     new Promise((resolve, reject) => {
         setTimeout(()=>{
+            console.log(email,senha)
             if(email == 'joao@tome.com' && senha == '123'){
-                resolve({nome: "JoaoTome", id: "asd123"});
+                resolve({nome: "JoaoTome", id: "asd123", tipo: 1});
             }else{
                 reject();
             }
@@ -23,7 +23,7 @@ function* loginRequest({ payload }){
         yield put(action.logarSuccess(response));
         
     } catch (error){
-        console.warn(error)
+        console.log(error)
         yield put(action.logarFailure());
     }
 }

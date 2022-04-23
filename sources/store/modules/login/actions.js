@@ -7,12 +7,6 @@ export function logarRequest(payload){
     }
 }
 
-
-export const logarRequestPromisse = (payload) => dispatch => new Promise((resolve,reject)=>{
-    dispatch(logarRequest(payload));
-    resolve("nao sei");
-});
-
 export function logarSuccess(payload){
     return {
         type: types.LOGIN_LOGAR_SUCCESS,
@@ -23,5 +17,17 @@ export function logarSuccess(payload){
 export function logarFailure(){
     return {
         type: types.LOGIN_LOGAR_FAILURE
+    }
+}
+
+export function deslogar(){
+    return {
+        type: types.LOGIN_DESLOGAR
+    }
+}
+
+export function reseterro(){
+    return {
+        type: types.LOGIN_ERRO_RESET
     }
 }

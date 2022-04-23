@@ -7,12 +7,14 @@ import Card from '../../components/ScrollVisitas/Card'
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import 'moment/locale/pt-br'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deslogar } from '../../store/modules/login/actions';
 
 
 export default function TelaInicial() {
-    const nomelogin = useSelector(state => state.Login.nome)
+    const nomelogin = useSelector(state => state.Login.user.nome)
     const navigation = useNavigation()
+    const dispatch = useDispatch();
     const [arrayRoteiro, setarrayRoteiro] = useState([
         {id: 1, nome:"Nome Parceiro1", horario: "16:00", bairro: "Jardim Bla"},
         {id: 2, nome:"Nome Parceiro2", horario: "16:00", bairro: "Jardim Bla"},
@@ -44,6 +46,10 @@ export default function TelaInicial() {
         setArrayRoteiroFiltrado(array)
     }
 
+    function Fdeslogar(){
+        dispatch(deslogar());
+        navigation.navigate('Login')
+    }
 
  return (
     <SafeAreaView style={Styles.container}>
@@ -54,7 +60,7 @@ export default function TelaInicial() {
             <Text style={Styles.txtAgente}>Agente</Text>
             <View style={Styles.areaAgenteExit}>
                 <Text style={Styles.txtnomeAgente}>{nomelogin}</Text>
-                <Icon name="log-out-outline" size={36} color="#FFF" style={Styles.logoutIcon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="log-out-outline" size={36} color="#FFF" style={Styles.logoutIcon} onPress={() => Fdeslogar()}/>
             </View>
         </View>
         <View style={isSearching ? Styles.voltar : { display:'none' }}>

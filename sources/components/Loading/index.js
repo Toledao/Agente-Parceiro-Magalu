@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default function Loading({isLoading}) {
@@ -9,7 +9,8 @@ export default function Loading({isLoading}) {
         return (
             <View style={Styles.container}>
                 <View style={Styles.card}>
-                    <Text styles={Styles.texto}>Carregando..</Text>
+                    <ActivityIndicator size={'large'} color={'#0086FE'}/>
+                    {/* <Text style={Styles.texto}>Carregando..</Text> */}
                 </View>
             </View>
         );
@@ -28,19 +29,17 @@ const Styles = EStyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        backgroundColor: 'rgba(0,0,0,0.8)'
+        backgroundColor: 'rgba(0,0,0,0.6)'
     },
     card:{
-        backgroundColor: "#FFF",
-        borderRadius: 20,
-        padding: 10,
-        marginVertical: '0.3rem',
-        marginHorizontal: '1rem',
+        // backgroundColor: "#FFF",
         alignItems: 'center'
     },
     texto:{
-        color: '#000',
-        fontSize: '1.5rem',
+        color: 'black',
+        fontWeight: '400',
+        fontSize: '1.2rem',
+        alignSelf: 'center',
     }
 })
 
