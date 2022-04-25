@@ -3,13 +3,16 @@ import { View, Text, TouchableOpacity} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';
+import moment from 'moment';
+import 'moment/locale/pt-br'
 
-export default function ScrollVisitas({data}) {
+export default function ScrollVisitas({data, listagem = false}) {
     const navigation = useNavigation()
 
-    var Nome = data.nome
+    var Nome = data.nomeparceiro
     var Bairro = data.bairro
     var Horario = data.horario
+    var Data = data.dia
 
     return (
         <TouchableOpacity style={Styles.card}>  
@@ -18,7 +21,10 @@ export default function ScrollVisitas({data}) {
 
             <View style={Styles.descricao}>
                 <Text style={Styles.txtdesc}>Bairro: {Bairro}</Text>
-                <Text style={Styles.txtdesc}>Horario: {Horario}</Text>
+                <View>
+                    <Text style={listagem == true ? Styles.txtdesc : {display: "none"}}>Dia: {moment(Data).format('L')}</Text>
+                    <Text style={Styles.txtdesc}>Horario: {Horario}</Text>
+                </View>
             </View>
 
             <View style={Styles.icons}>

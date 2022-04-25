@@ -5,6 +5,7 @@ import Login from './sources/pages/Login';
 import Detalhes from './sources/pages/Detalhes';
 import TelaInicial from './sources/pages/TelaInicial';
 import ListaParceiro from './sources/pages/ListaParceiro';
+import ListaRoteiro from './sources/pages/ListaRoteiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
 import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
@@ -49,6 +50,20 @@ export default function AgenteParceiro() {
           <Stack.Screen 
           name="ListaParceiro" 
           component={ListaParceiro}
+          options={{ 
+          title: '',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
+          <Stack.Screen 
+          name="ListaRoteiro" 
+          component={ListaRoteiro}
           options={{ 
           title: '',
           headerStyle:{

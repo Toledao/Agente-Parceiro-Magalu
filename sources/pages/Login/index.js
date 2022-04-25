@@ -12,34 +12,37 @@ export default function Login() {
   const navigation = useNavigation()
   const dispatch = useDispatch();
 
-  const isloading = useSelector(state => state.Auth.isloading);
+  const isLoadingState = useSelector(state => state.Auth.isLoading);
   const islogged = useSelector(state => state.Auth.logado);
   const errologin = useSelector(state => state.Auth.errologin);
   const ehAdm = useSelector(state => state.Auth.user.ehadm);
 
+  const [isloading, setIsloading] = useState(false)
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
   const [ShowAlert, setShowAlert] = useState(false)
 
   useEffect(()=>{
-    if (islogged){
-      //verificar se vai para a pagina do adm ou do agente normal=
+    if(!isLoadingState){
+      setIsloading(false)
+      if (islogged){
+        //verificar se vai para a pagina do adm ou do agente normal=
 
-      if(ehAdm == true){
-        navigation.navigate("TelaInicialADM")
-      }else{
-        navigation.navigate("TelaInicial")
+        if(ehAdm == true){
+          navigation.navigate("TelaInicialADM")
+        }else{
+          navigation.navigate("TelaInicial")
+        }
       }
+      setShowAlert(errologin)
     }
-
-    setShowAlert(errologin)
   })
 
 
   async function Logar(){
     //Fazer o login
 
-
+    setIsloading(true)
     //para n ter que ficar logando sempre
     navigation.navigate("TelaInicial")
     //navigation.navigate("TelaInicialADM")
