@@ -9,6 +9,7 @@ const arrayAgentes = [
     {nomeAgente: 'Marinao Testador', qtdSeller: 150, qtdVisitas: 100},
     {nomeAgente: 'Flavia Fontenelle', qtdSeller: 130, qtdVisitas: 50},
     {nomeAgente: 'Matheus Henrique', qtdSeller: 90, qtdVisitas: 3},
+    
     ]
 
 
@@ -23,13 +24,14 @@ export default function Agentes() {
         <View style={Styles.areaAtalhos}>
             <AtalhosAgente/>
         </View>
-        <FlatList
-        style={Styles.scrollVisitas}
-        data={arrayAgentes}
-        renderItem={({item}) => 
-        <CardAgentes data={item}/>
-        }
-        />
+        <View style={Styles.scrollVisitas}>
+            <FlatList
+            data={arrayAgentes}
+            renderItem={({item}) => 
+            <CardAgentes data={item}/>
+            }
+            />
+        </View>
    </SafeAreaView>
   );
 }

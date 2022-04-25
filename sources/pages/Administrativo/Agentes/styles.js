@@ -6,16 +6,16 @@ export default EStyleSheet.create({
         flex: 1,
     },
     areaHeader:{
-        flex: 0.15,
+        flex: 2,
         marginHorizontal: "1.5rem",
         alignItems: 'center',
-        paddingTop: '5%'
+        paddingTop: '1%'
     },
     areaAtalhos:{
-        flex: 0.3,
+        flex: 4,
     },
     scrollVisitas:{
-        flex: 0.5,
+        flex: 13,
         paddingHorizontal: '5%'
     },
     txtAgente:{

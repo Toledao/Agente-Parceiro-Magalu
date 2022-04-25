@@ -27,11 +27,13 @@ export default function TelaInicialADM() {
         <View style={Styles.areaAtalhos}>
             <AtalhosIcon/>
         </View>
-            <ScrollView style={Styles.scrollVisitas}>
-                <CardSelecao nome={'Agentes'} tela={() => navigation.navigate('Agentes')}/>
-                <CardSelecao nome={'Roteiros'}/>
-                <CardSelecao nome={'Checklists'}/>
-            </ScrollView>
+            <View style={Styles.scrollVisitas}>
+                <ScrollView >
+                    <CardSelecao nome={'Agentes'} tela={() => navigation.navigate('Agentes')}/>
+                    <CardSelecao nome={'Roteiros'}/>
+                    <CardSelecao nome={'Checklists'}/>
+                </ScrollView>
+            </View>
    </SafeAreaView>
   );
 }

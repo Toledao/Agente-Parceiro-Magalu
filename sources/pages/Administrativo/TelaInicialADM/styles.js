@@ -6,19 +6,19 @@ export default EStyleSheet.create({
         flex: 1,
     },
     areaLogo:{
-        flex: 0.1,
+        flex: 1,
         alignItems: 'center',
         marginBottom: '10%'
     },
     areaHeader:{
-        flex: 0.26,
+        flex: 8,
         marginHorizontal: "1.5rem"
     },
     areaAtalhos:{
-        flex: 0.3,
+        flex: 10,
     },
     scrollVisitas:{
-        flex: 0.5,
+        flex: 20,
         paddingHorizontal: '5%'
     },
     txtAgente:{
