@@ -1,7 +1,8 @@
 import { call, put, all, takeLatest} from 'redux-saga/effects'
 import * as action from './actions'
 import * as types from '../types'
-
+import axios from '../../../services/axios';
+import jwt_decode  from 'jwt-decode'
 
 // Isso aqui é uma simulação de response da api
 const requisicao = (email,senha) => 
@@ -18,8 +19,15 @@ const requisicao = (email,senha) =>
 function* loginRequest({ payload }){
     try {
         const {email, senha} = payload
-        const response = yield call(requisicao,email,senha);
-        yield put(action.logarSuccess(response));
+        //const response = yield call(requisicao,email,senha);
+        const response = yield call(axios.post, '/Login', {"email": email,"senha": senha})
+        console.log(response.data)
+        console.log(response.data.refreshToken)
+
+        const decoded = jwt_decode(response.data.refreshToken)
+        console.log(decoded)
+
+        yield put(action.logarSuccess(response.data));
     } catch (error){
         console.log(error)
         yield put(action.logarFailure());
@@ -27,5 +35,5 @@ function* loginRequest({ payload }){
 }
 
 export default all([
-    takeLatest(types.LOGIN_LOGAR_REQUEST, loginRequest)
+    takeLatest(types.AUTH_LOGAR_REQUEST, loginRequest)
 ])

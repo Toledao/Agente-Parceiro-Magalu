@@ -7,7 +7,7 @@ export default reducers => {
             key: "Agente-Parceiro-Magalu",
             storage: AsyncStorage,
             whitelist: [
-                'Login'
+                'Auth'
             ]
         },
         reducers
