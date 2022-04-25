@@ -9,87 +9,94 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
 import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
 import Agentes from './sources/pages/Administrativo/Agentes';
+import { Provider } from 'react-redux';
+import store, {persistor} from './sources/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function AgenteParceiro() {
 
   const Stack = createNativeStackNavigator();
 
  return (
-  <NavigationContainer>
-    <Stack.Navigator initialRouteName='Login'>
-      <Stack.Screen 
-      name="Login" 
-      component={Login}
-      options={{headerShown: false}}
-      />
-      <Stack.Screen 
-      name="TelaInicial" 
-      component={TelaInicial}
-      options={{headerShown: false}}
-      />
-      <Stack.Screen 
-      name="Detalhes" 
-      component={Detalhes}
-      options={{ 
-      title: 'Detalhes do Parceiro',
-      headerStyle:{
-        backgroundColor: '#0086FE'
-      },
-      headerTintColor: '#FFF',
-      headerShown: true,
-      headerShadowVisible: false,
-      headerBackTitle: 'Voltar'
-         }}
-      />
-      <Stack.Screen 
-      name="ListaParceiro" 
-      component={ListaParceiro}
-      options={{ 
-      title: '',
-      headerStyle:{
-        backgroundColor: '#0086FE'
-      },
-      headerTintColor: '#FFF',
-      headerShown: true,
-      headerShadowVisible: false,
-      headerBackTitle: 'Voltar'
-         }}
-      />
-      <Stack.Screen 
-      name="CheckList" 
-      component={CheckList}
-      options={{ 
-      title: 'CheckList',
-      headerStyle:{
-        backgroundColor: '#0086FE'
-      },
-      headerTintColor: '#FFF',
-      headerShown: true,
-      headerShadowVisible: false,
-      headerBackTitle: 'Voltar',
-         }}
-      />
-      <Stack.Screen 
-      name="TelaInicialADM" 
-      component={TelaInicialADM}
-      options={{headerShown: false}}
-      />
-      <Stack.Screen 
-      name="Agentes" 
-      component={Agentes}
-      options={{ 
-        title: '',
-        headerStyle:{
-          backgroundColor: '#0086FE'
-        },
-        headerTintColor: '#FFF',
-        headerShown: true,
-        headerShadowVisible: false,
-        headerBackTitle: 'Voltar',
-           }}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Login'>
+          <Stack.Screen 
+          name="Login" 
+          component={Login}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="TelaInicial" 
+          component={TelaInicial}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Detalhes" 
+          component={Detalhes}
+          options={{ 
+          title: 'Detalhes do Parceiro',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
+          <Stack.Screen 
+          name="ListaParceiro" 
+          component={ListaParceiro}
+          options={{ 
+          title: '',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
+          <Stack.Screen 
+          name="CheckList" 
+          component={CheckList}
+          options={{ 
+          title: 'CheckList',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar',
+             }}
+          />
+          <Stack.Screen 
+          name="TelaInicialADM" 
+          component={TelaInicialADM}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Agentes" 
+          component={Agentes}
+          options={{ 
+            title: '',
+            headerStyle:{
+              backgroundColor: '#0086FE'
+            },
+            headerTintColor: '#FFF',
+            headerShown: true,
+            headerShadowVisible: false,
+            headerBackTitle: 'Voltar',
+               }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PersistGate>
+  </Provider>
   );
 }
 
