@@ -34,6 +34,8 @@ export default function Login() {
   function Logar(){
     //Fazer o login
 
+
+    //navigation.navigate('TelaInicialADM') Salvation ADM
     //dispatch(loginAction.logarRequest({email:"joao@tome.com", senha:'123'}))
     dispatch(loginAction.logarRequest({email:Email, senha:Senha}))
   }

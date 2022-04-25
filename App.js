@@ -6,6 +6,9 @@ import Detalhes from './sources/pages/Detalhes';
 import TelaInicial from './sources/pages/TelaInicial';
 import ListaParceiro from './sources/pages/ListaParceiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import CheckList from './sources/pages/CheckList';
+import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
+import Agentes from './sources/pages/Administrativo/Agentes';
 import { Provider } from 'react-redux';
 import store, {persistor} from './sources/store';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -41,7 +44,7 @@ export default function AgenteParceiro() {
           headerShown: true,
           headerShadowVisible: false,
           headerBackTitle: 'Voltar'
-            }}
+             }}
           />
           <Stack.Screen 
           name="ListaParceiro" 
@@ -55,7 +58,40 @@ export default function AgenteParceiro() {
           headerShown: true,
           headerShadowVisible: false,
           headerBackTitle: 'Voltar'
-            }}
+             }}
+          />
+          <Stack.Screen 
+          name="CheckList" 
+          component={CheckList}
+          options={{ 
+          title: 'CheckList',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar',
+             }}
+          />
+          <Stack.Screen 
+          name="TelaInicialADM" 
+          component={TelaInicialADM}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Agentes" 
+          component={Agentes}
+          options={{ 
+            title: '',
+            headerStyle:{
+              backgroundColor: '#0086FE'
+            },
+            headerTintColor: '#FFF',
+            headerShown: true,
+            headerShadowVisible: false,
+            headerBackTitle: 'Voltar',
+               }}
           />
         </Stack.Navigator>
       </NavigationContainer>
