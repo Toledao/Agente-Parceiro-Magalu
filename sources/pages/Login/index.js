@@ -4,7 +4,7 @@ import Styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Loading';
-import * as loginAction from '../../store/modules/login/actions'
+import * as AuthAction from '../../store/modules/auth/actions'
 import AwesomeAlert from 'react-native-awesome-alerts';
 
 
@@ -12,9 +12,10 @@ export default function Login() {
   const navigation = useNavigation()
   const dispatch = useDispatch();
 
-  const isloading = useSelector(state => state.Login.isloading);
-  const islogged = useSelector(state => state.Login.logado);
-  const errologin = useSelector(state => state.Login.errologin);
+  const isloading = useSelector(state => state.Auth.isloading);
+  const islogged = useSelector(state => state.Auth.logado);
+  const errologin = useSelector(state => state.Auth.errologin);
+  const ehAdm = useSelector(state => state.Auth.user.ehadm);
 
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
@@ -22,22 +23,29 @@ export default function Login() {
 
   useEffect(()=>{
     if (islogged){
-      //verificar se vai para a pagina do adm ou do agente normal
+      //verificar se vai para a pagina do adm ou do agente normal=
 
-      navigation.navigate("TelaInicial")
+      if(ehAdm == true){
+        navigation.navigate("TelaInicialADM")
+      }else{
+        navigation.navigate("TelaInicial")
+      }
     }
 
     setShowAlert(errologin)
   })
 
 
-  function Logar(){
+  async function Logar(){
     //Fazer o login
 
 
-    //navigation.navigate('TelaInicialADM') Salvation ADM
-    //dispatch(loginAction.logarRequest({email:"joao@tome.com", senha:'123'}))
-    dispatch(loginAction.logarRequest({email:Email, senha:Senha}))
+    //para n ter que ficar logando sempre
+    navigation.navigate("TelaInicial")
+    //navigation.navigate("TelaInicialADM")
+    
+    //produção
+    //dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
   }
 
   return (
@@ -67,7 +75,7 @@ export default function Login() {
           confirmText="Ok"
           confirmButtonColor="#DD6B55"
           onConfirmPressed={() => {
-            dispatch(loginAction.reseterro())
+            dispatch(AuthAction.reseterro())
           }}
         />
     </SafeAreaView>

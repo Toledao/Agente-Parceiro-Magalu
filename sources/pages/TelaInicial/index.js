@@ -8,11 +8,11 @@ import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import 'moment/locale/pt-br'
 import { useSelector, useDispatch } from 'react-redux';
-import { deslogar } from '../../store/modules/login/actions';
+import { deslogar } from '../../store/modules/auth/actions';
 
 
 export default function TelaInicial() {
-    const nomelogin = useSelector(state => state.Login.user.nome)
+    const nomelogin = useSelector(state => state.Auth.user.nome)
     const navigation = useNavigation()
     const dispatch = useDispatch();
     const [arrayRoteiro, setarrayRoteiro] = useState([
