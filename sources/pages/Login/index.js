@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Loading';
 import * as AuthAction from '../../store/modules/auth/actions'
 import AwesomeAlert from 'react-native-awesome-alerts';
-import axios from '../../services/axios';
 
 
 export default function Login() {
@@ -39,9 +38,14 @@ export default function Login() {
 
   async function Logar(){
     //Fazer o login
-    //navigation.navigate('TelaInicialADM') Salvation ADM
-    //dispatch(AuthAction.logarRequest({email:"joao@tome.com", senha:'123'}))
-    dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
+
+
+    //para n ter que ficar logando sempre
+    navigation.navigate("TelaInicial")
+    //navigation.navigate("TelaInicialADM")
+    
+    //produção
+    //dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
   }
 
   return (
