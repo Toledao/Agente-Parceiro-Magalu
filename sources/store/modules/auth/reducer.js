@@ -1,9 +1,10 @@
 import * as types from '../types'
+import jwt_decode  from 'jwt-decode'
 
 
 const initialState = {
     logado: false,
-    user: {nome: "", id: "", ehadm: 0, token: ''},
+    user: {nome: "", id: "", ehadm: 0, token: '', refreshToken: ''},
     isloading: false,
     errologin: false,
 }
@@ -18,13 +19,15 @@ export default function (state = initialState, action){
             break;
 
         case types.AUTH_LOGAR_SUCCESS:
-            console.log(action.payload)
+            const decoded = jwt_decode(action.payload.token)
+
             newState = {...state}
             newState.logado = true
-            newState.user.nome = action.payload.nome
-            newState.user.id = action.payload.id
-            newState.user.ehadm = action.payload.ehAdm
-            newState.user.token = action.payload.refreshToken
+            newState.user.nome = decoded.nome
+            newState.user.id = decoded.sub
+            newState.user.ehadm = decoded.adm
+            newState.user.token = action.payload.token
+            newState.user.refreshToken = action.payload.refreshToken
             newState.isloading = false;
             newState.errologin = false
             return newState

@@ -16,10 +16,10 @@ export default function TelaInicial() {
     const navigation = useNavigation()
     const dispatch = useDispatch();
     const [arrayRoteiro, setarrayRoteiro] = useState([
-        {id: 1, nome:"Nome Parceiro1", horario: "16:00", bairro: "Jardim Bla"},
-        {id: 2, nome:"Nome Parceiro2", horario: "16:00", bairro: "Jardim Bla"},
-        {id: 3, nome:"Nome Parceiro3", horario: "16:00", bairro: "Jardim Bla"},
-        {id: 4, nome:"Nome Parceiro4", horario: "16:00", bairro: "Jardim Bla"},
+        {id: 1, nomeparceiro:"Nome Parceiro1", horario: "16:00", bairro: "Jardim Bla"},
+        {id: 2, nomeparceiro:"Nome Parceiro2", horario: "16:00", bairro: "Jardim Bla"},
+        {id: 3, nomeparceiro:"Nome Parceiro3", horario: "16:00", bairro: "Jardim Bla"},
+        {id: 4, nomeparceiro:"Nome Parceiro4", horario: "16:00", bairro: "Jardim Bla"},
     ])
 
     const [arrayRoteiroFiltrado, setArrayRoteiroFiltrado] = useState(arrayRoteiro)
@@ -39,7 +39,7 @@ export default function TelaInicial() {
     function procuraParceiro(nome){
         const array = []
         arrayRoteiro.forEach(element => {
-            if(element.nome.toLowerCase().includes(nome.toLowerCase())){
+            if(element.nomeparceiro.toLowerCase().includes(nome.toLowerCase())){
                 array.push(element)
             }
         });

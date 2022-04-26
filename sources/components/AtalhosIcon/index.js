@@ -21,7 +21,7 @@ export default function AtalhosIcon() {
 
         {/* Atalho 2 */}
 
-        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
+        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('ListaRoteiro')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
                 <Icon name="beer-outline" size={40}/>
