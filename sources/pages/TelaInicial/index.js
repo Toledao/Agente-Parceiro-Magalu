@@ -54,7 +54,7 @@ export default function TelaInicial() {
  return (
     <SafeAreaView style={Styles.container}>
         <View style={Styles.areaLogo}>
-            <Image source={require('../../components/Logos/LOGOAGENTE.png')} style={{height: 55, width: 140}}  />
+            <Image source={require('../../static/Logo/LOGOAGENTE.png')} style={{height: 55, width: 140}}  />
         </View>
         <View style={isSearching ? { display:'none' } : Styles.areaHeader}>
             <Text style={Styles.txtAgente}>Agente</Text>

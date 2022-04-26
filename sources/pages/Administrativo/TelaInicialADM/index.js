@@ -25,7 +25,7 @@ export default function TelaInicialADM() {
  return (
     <SafeAreaView style={Styles.container}>
         <View style={Styles.areaLogo}>
-            <Image source={require('../../../components/Logos/LOGOAGENTE.png')} style={{height: 55, width: 140}}  />
+            <Image source={require('../../../static/Logo/LOGOAGENTE.png')} style={{height: 55, width: 140}}  />
         </View>
         <View style={Styles.areaHeader}>
             <Text style={Styles.txtAgente}>Administrador</Text>

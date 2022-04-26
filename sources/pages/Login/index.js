@@ -68,7 +68,7 @@ export default function Login() {
       <Loading isLoading={isloading}/>
         <View style={Styles.areaLogin}>
         <View style={Styles.loginimagem}>
-          <Image source={require('../../components/Logos/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
+          <Image source={require('../../static/Logo/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
         </View>
 
         <TextInput style={Styles.inputs} keyboardType="email-address" placeholder="Digite seu e-mail" onChangeText={setEmail} ref={textEmail}/>
