@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function AtalhosIcon() {
     const navigation = useNavigation()
+
+    const oportuniade = 'Oportunidades'
  return (
     <ScrollView style={Styles.areaAtalho} horizontal={true} showsHorizontalScrollIndicator={false} >
 
@@ -31,12 +33,12 @@ export default function AtalhosIcon() {
 
         {/* Atalho 3 */}
 
-        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Login')}>  
+        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate(oportuniade)}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
                 <Icon name="beer-outline" size={40}/>
             </View>
-            <Text style={Styles.txtAtalho}> Checklist Avulso 3 </Text>
+            <Text style={Styles.txtAtalho}>Oportunidades</Text>
         </TouchableOpacity>
 
         {/* Atalho 4 */}
