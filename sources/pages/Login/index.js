@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, component } from 'react';
 import { View, Text, SafeAreaView, TextInput, TouchableOpacity, TouchableHighlight, Image} from 'react-native';
 import Styles from './styles';
 import { useNavigation } from '@react-navigation/native';
@@ -12,6 +12,10 @@ export default function Login() {
   const navigation = useNavigation()
   const dispatch = useDispatch();
 
+  const textSenha = useRef(null)
+  const textEmail = useRef(null)
+
+
   const isLoadingState = useSelector(state => state.Auth.isLoading);
   const islogged = useSelector(state => state.Auth.logado);
   const errologin = useSelector(state => state.Auth.errologin);
@@ -22,9 +26,14 @@ export default function Login() {
   const [Senha, setSenha] = useState("");
   const [ShowAlert, setShowAlert] = useState(false)
 
+  //this.TextInputEmail.clear()
+  
+
+
+
   useEffect(()=>{
     if(!isLoadingState){
-      setIsloading(false)
+      
       if (islogged){
         //verificar se vai para a pagina do adm ou do agente normal=
 
@@ -33,6 +42,7 @@ export default function Login() {
         }else{
           navigation.navigate("TelaInicial")
         }
+        setIsloading(false)
       }
       setShowAlert(errologin)
     }
@@ -48,7 +58,9 @@ export default function Login() {
     //navigation.navigate("TelaInicialADM")
     
     //produção
-    //dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
+    // dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
+    // textSenha.current.clear()
+    // textEmail.current.clear()
   }
 
   return (
@@ -59,8 +71,8 @@ export default function Login() {
           <Image source={require('../../components/Logos/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
         </View>
 
-        <TextInput style={Styles.inputs} keyboardType="email-address" placeholder="Digite seu e-mail" onChangeText={setEmail}/>
-        <TextInput style={Styles.inputs} secureTextEntry placeholder="Senha" onChangeText={setSenha}/>
+        <TextInput style={Styles.inputs} keyboardType="email-address" placeholder="Digite seu e-mail" onChangeText={setEmail} ref={textEmail}/>
+        <TextInput style={Styles.inputs} secureTextEntry placeholder="Senha" onChangeText={setSenha} ref={textSenha}/>
         <TouchableOpacity style={Styles.btnLogin} onPressOut={() => Logar()}>
             <Text style={Styles.txtLogin}>Fazer Login</Text>
         </TouchableOpacity>

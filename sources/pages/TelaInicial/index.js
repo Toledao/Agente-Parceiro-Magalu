@@ -39,7 +39,7 @@ export default function TelaInicial() {
     function procuraParceiro(nome){
         const array = []
         arrayRoteiro.forEach(element => {
-            if(element.nome.toLowerCase().includes(nome.toLowerCase())){
+            if(element.nomeparceiro.toLowerCase().includes(nome.toLowerCase())){
                 array.push(element)
             }
         });
