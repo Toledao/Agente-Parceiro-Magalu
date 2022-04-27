@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import { View, SafeAreaView, Text, TouchableOpacity, ScrollView, TextInput, Image, Keyboard} from 'react-native';
 import Styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import AtalhosIcon from '../../../components/AtalhosIcon';
-import Card from '../../../components/ScrollVisitas/Card'
+import Atalho from '../../../components/Atalho';
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
 import ScrollParceiros from '../../../components/ScrollParceiros';
@@ -35,7 +34,16 @@ export default function TelaInicialADM() {
             </View>
         </View>
         <View style={Styles.areaAtalhos}>
-            <AtalhosIcon/>
+            <ScrollView style={Styles.areaAtalho} horizontal={true} showsHorizontalScrollIndicator={false} >
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='person-add-outline' navigate='Oportunidades' nomeatalho="Oportunidades" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+            </ScrollView>
         </View>
             <View style={Styles.scrollVisitas}>
                 <ScrollView >

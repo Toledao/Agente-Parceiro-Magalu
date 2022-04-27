@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { View, SafeAreaView, Text, TouchableOpacity, FlatList, TextInput, Image, Keyboard} from 'react-native';
+import { View, SafeAreaView, Text, TouchableOpacity, FlatList, TextInput, Image, Keyboard, ScrollView} from 'react-native';
 import Styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import AtalhosIcon from '../../components/AtalhosIcon';
+import Atalho from '../../components/Atalho';
 import Card from '../../components/ScrollVisitas/Card'
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
@@ -70,7 +70,16 @@ export default function TelaInicial() {
             </TouchableOpacity>
         </View>
         <View style={isSearching ? {display: 'none'} : Styles.areaAtalhos}>
-            <AtalhosIcon/>
+            <ScrollView style={Styles.areaAtalho} horizontal={true} showsHorizontalScrollIndicator={false} >
+                <Atalho icone='list' navigate='CheckList' nomeatalho="Checklist Avulso" />
+                <Atalho icone='person-add-outline' navigate='Oportunidades' nomeatalho="Oportunidades" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+            </ScrollView>
         </View>
         <View style={Styles.areaRoteiro}>
             <Text style={Styles.txtRoteiroHoje}>
