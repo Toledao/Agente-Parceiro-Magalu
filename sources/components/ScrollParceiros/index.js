@@ -2,10 +2,13 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function ScrollParceiros({data}) {
+    const navigation = useNavigation()
  return (
-    <TouchableOpacity>
+    <TouchableOpacity onPressOut={() => navigation.navigate("NewVisitaDate")}>
         <View style={Styles.container}>
             <Text style={Styles.txtNome}>{data.nomeParceiro}</Text>
             <Icon style={Styles.icone} size={32} name='chevron-forward-outline' color="#0086FE" />
