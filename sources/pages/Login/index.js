@@ -28,7 +28,7 @@ export default function Login() {
 
   //this.TextInputEmail.clear()
   
-
+  setIsloading(false)
 
 
   useEffect(()=>{
