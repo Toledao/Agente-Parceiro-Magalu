@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
-import { View, Text, TouchableOpacity,SafeAreaView, FlatList, ScrollView} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import ScrollParceiros from '../../components/ScrollParceiros';
+import { View, Text, TouchableOpacity,SafeAreaView, FlatList} from 'react-native';
 import Styles from './styles';
-import {Picker} from '@react-native-picker/picker'
 import DatePicker from 'react-native-date-picker'
 import moment from 'moment';
 import 'moment/locale/pt-br'
@@ -12,9 +9,6 @@ import 'moment/locale/pt-br'
 export default function NewVisitaDate() {
     const listaDatasInitial = [{id:1, data: new Date(), open: false}]
     const [dates, setDates] = useState(listaDatasInitial)
-    const [extraData, setExtraData] = useState(new Date())
-    
-
     
     function openModal(item){
         const newListData = dates.map((itemlista) =>
@@ -128,45 +122,6 @@ export default function NewVisitaDate() {
 
             }
             />
-           
-           
-           
-           
-           
-           {/* <View>
-               <Text style={Styles.titulodata}>Data da Visita:</Text>
-                <TouchableOpacity style={Styles.button} onPress={() => setOpen(true)}>
-                    <Text style={Styles.data}>{moment(date).format('DD/MM/YYYY [as] H:mm')}</Text>
-                </TouchableOpacity>
-            </View>
-            <DatePicker modal
-                        title='Selecione uma Data'
-                        open={open}     
-                        onConfirm={(date) => {
-                            setOpen(false)
-                            setDate(date)
-                        }}
-                         onCancel={() => {
-                            setOpen(false)
-                        }} 
-                        date={date} 
-                        minuteInterval={10} 
-                        locale={'pt-br'} 
-                        is24hourSource={'device'} /> */}
-            {/* <View style={Styles.areaPicker}>
-                <Text style={Styles.titulodata}>Selecione o Intevalo da visita:</Text>
-                <View style={Styles.PickerCard}>
-                    <Picker
-                        style={Styles.PickerIntervalo}
-                        selectedValue={selectedLanguage}
-                        onValueChange={(itemValue, itemIndex) =>
-                            setSelectedLanguage(itemValue)
-                    }>
-                        <Picker.Item label="Mensalmente" value="Mensalmente" />
-                        <Picker.Item label="5 Semanas" value="5 Semanas" />
-                    </Picker>
-                </View>
-            </View> */}
        </View>
    </SafeAreaView>
   );
