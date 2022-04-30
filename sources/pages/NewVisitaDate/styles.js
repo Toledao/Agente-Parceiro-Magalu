@@ -36,6 +36,7 @@ const Styles = EStyleSheet.create({
         paddingVertical: '0.8rem',
         paddingHorizontal: '1rem',
         marginBottom: '1rem',
+        justifyContent: 'center'
     },
     data:{
         fontSize: "1.1rem",
@@ -50,20 +51,18 @@ const Styles = EStyleSheet.create({
         backgroundColor: '#FFF',
         borderRadius: '1rem'
     },
-    areaData:{
-        flex: 4
-    },
     areaPicker:{
-        flex: 4,
         alignItems: 'center'
     },
     PickerIntervalo:{
         width:'100%'
     },
     areaTags:{
-        flex: 4,
         backgroundColor: '#FF0000',
         width: '100%'
+    },
+    areaData:{
+        width: '60%', alignItems: 'center'
     },
     AreaBTN:{
         width: '100%',
@@ -85,6 +84,14 @@ const Styles = EStyleSheet.create({
         fontSize: '1.1rem',
         fontWeight: 'bold'
     },
+    footer:{
+        borderTopWidth: 1,
+        borderTopColor: '#BAB4B4',
+        paddingTop: '1rem',
+    },
+    texto:{
+        fontSize: "1.1rem"
+    }
 })
 
 export default Styles
