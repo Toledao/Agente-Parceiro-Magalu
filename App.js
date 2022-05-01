@@ -8,6 +8,7 @@ import ListaParceiro from './sources/pages/ListaParceiro';
 import ListaRoteiro from './sources/pages/ListaRoteiro';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
+import ResetSenha from './sources/pages/ResetSenha';
 import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
 import Agentes from './sources/pages/Administrativo/Agentes';
 import { Provider } from 'react-redux';
@@ -26,6 +27,11 @@ export default function AgenteParceiro() {
           <Stack.Screen 
           name="Login" 
           component={Login}
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="ResetSenha" 
+          component={ResetSenha}
           options={{headerShown: false}}
           />
           <Stack.Screen 
