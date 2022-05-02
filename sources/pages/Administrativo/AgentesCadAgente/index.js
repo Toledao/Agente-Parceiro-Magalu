@@ -2,6 +2,7 @@ import React from 'react';
 import { View, SafeAreaView, Text, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import Styles from './styles';
 
+
 export default function AgentesCadAgente() {
  return (
    <SafeAreaView style={Styles.container}>
@@ -18,22 +19,22 @@ export default function AgentesCadAgente() {
       <Text style={Styles.txtForm}>CPF</Text>
       <TextInput
       style={Styles.txtInputForm}
-      placeholder='Nome do Agente'
+      placeholder='000.000.000-00'
       />
       <Text style={Styles.txtForm}>E-mail</Text>
       <TextInput
       style={Styles.txtInputForm}
-      placeholder='Nome do Agente'
+      placeholder='exemplo@gmail.com'
       />
       <Text style={Styles.txtForm}>Senha</Text>
       <TextInput
       style={Styles.txtInputForm}
-      placeholder='Nome do Agente'
+      placeholder='sua senha'
       />
       <Text style={Styles.txtForm}>Confirme a Senha</Text>
       <TextInput
       style={Styles.txtInputForm}
-      placeholder='Nome do Agente'
+      placeholder='confirme sua senha'
       />
       </View>
       <View style={Styles.AreaBTN}>

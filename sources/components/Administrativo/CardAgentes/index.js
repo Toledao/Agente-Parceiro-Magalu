@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default function CardAgentes({data}) {
+
  return (
     <TouchableOpacity style={Styles.container}>
         <View style={Styles.areaNomebtn}>

@@ -28,7 +28,8 @@ const Styles = EStyleSheet.create({
     txtInputForm:{
         backgroundColor: '#FFF',
         borderRadius: 4,
-        height: '2.5rem'
+        height: '2.5rem',
+        paddingHorizontal: '1rem'
     },
     txtForm:{
         color: "$txtcolor",
