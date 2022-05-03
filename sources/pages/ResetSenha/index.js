@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { View, Text, SafeAreaView, TextInput, TouchableOpacity, Image} from 'react-native';
+import { View, Text, SafeAreaView, TextInput, TouchableOpacity, Image, Keyboard} from 'react-native';
 import Styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -64,16 +64,19 @@ export default function ResetSenha() {
   function requestCodigo(){
     dispatch(ResetActions.PedidoRequest({"email":Email}))
     setIsloading(true)
+    Keyboard.dismiss()
   }
 
   function enviarCodigo(){
     dispatch(ResetActions.CodigoRequest({"email":EmailState, "codigo": value}))
     setIsloading(true)
+    Keyboard.dismiss()
   }
 
   function novaSenha(){
     dispatch(ResetActions.NovaSenhaRequest({"email":EmailState, "senha": Senha}))
     setIsloading(true)
+    Keyboard.dismiss()
   }
 
   return (
@@ -110,7 +113,7 @@ export default function ResetSenha() {
                   value={value}
                   onChangeText={setValue}
                   cellCount={CELL_COUNT}
-                  keyboardType="number-pad"
+                  keyboardType="default"
                   rootStyle={Styles.codeFieldRoot}
                   textContentType="oneTimeCode"
                   renderCell={({index, symbol, isFocused}) => (
@@ -157,6 +160,8 @@ export default function ResetSenha() {
           confirmButtonColor="#DD6B55"
           onConfirmPressed={() => {
             setShowAlert(false)
+            dispatch(ResetActions.sair())
+            navigation.navigate("Login")
           }}
         />
 
