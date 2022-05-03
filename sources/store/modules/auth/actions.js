@@ -31,3 +31,10 @@ export function reseterro(){
         type: types.AUTH_ERRO_RESET
     }
 }
+
+export function refreshToken(payload){
+    return {
+        type: types.AUTH_REFRESHTOKEN,
+        payload
+    }
+}
