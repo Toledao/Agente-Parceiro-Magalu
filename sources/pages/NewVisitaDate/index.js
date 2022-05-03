@@ -9,6 +9,7 @@ import 'moment/locale/pt-br'
 export default function NewVisitaDate() {
     const listaDatasInitial = [{id:1, data: new Date(), open: false}]
     const [dates, setDates] = useState(listaDatasInitial)
+    const [extraData, setExtraData] = useState('')
     
     function openModal(item){
         const newListData = dates.map((itemlista) =>
