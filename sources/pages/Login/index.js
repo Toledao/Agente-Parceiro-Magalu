@@ -26,9 +26,6 @@ export default function Login() {
   const [Senha, setSenha] = useState("");
   const [ShowAlert, setShowAlert] = useState(false)
 
-  //this.TextInputEmail.clear()
-  
-
 
 
   useEffect(()=>{
@@ -45,6 +42,7 @@ export default function Login() {
         setIsloading(false)
       }
       setShowAlert(errologin)
+      setIsloading(false)
     }
   })
 
@@ -54,11 +52,11 @@ export default function Login() {
 
     setIsloading(true)
     //para n ter que ficar logando sempre
-    navigation.navigate("TelaInicial")
+    //navigation.navigate("TelaInicial")
     //navigation.navigate("TelaInicialADM")
     
     //produção
-    // dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
+    dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
     // textSenha.current.clear()
     // textEmail.current.clear()
   }
