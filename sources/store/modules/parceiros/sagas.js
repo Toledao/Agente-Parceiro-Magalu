@@ -11,11 +11,11 @@ function* ParceiroRequest(payload){
 
         axios.defaults.headers.common['Authorization'] = "Bearer " + token
 
-        const response = yield call(axios.get, '/Parceiro',null,{params: {"agenteId": agenteId}})
+        const response = yield call(axios.get, '/Parceiro',{params: {agenteId: agenteId}})
 
         console.log(response)
 
-        yield put(action.ParceiroCarregarSucesso(response));
+        yield put(action.ParceiroCarregarSucesso(response.data));
     } catch (error){
         console.log(error.response)
         yield put(action.ParceiroCarregarfailure());

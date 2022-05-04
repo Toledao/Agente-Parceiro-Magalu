@@ -9,14 +9,14 @@ import Loading from '../../components/Loading';
 
 export default function ListaParceiro() {
 
-    const carregado = useSelector(state => state.Roteiro.carregado)
+    const carregado = useSelector(state => state.Parceiro.carregado)
     const agenteId = useSelector(state => state.Auth.user.id)
     const token = useSelector(state => state.Auth.user.token)
-    const isloading = useSelector(state => state.Roteiro.isloading)
-    const erro = useSelector(state => state.Roteiro.erro)
-    const done = useSelector(state => state.Roteiro.done)
+    const isloading = useSelector(state => state.Parceiro.isloading)
+    const erro = useSelector(state => state.Parceiro.erro)
+    const done = useSelector(state => state.Parceiro.done)
     const dispatch = useDispatch()
-    const arrayParceiro = useSelector(state => state.Roteiro.roteiro)
+    const arrayParceiro = useSelector(state => state.Parceiro.parceiros)
 
     useEffect(()=>{
         if(!carregado){
@@ -38,6 +38,7 @@ export default function ListaParceiro() {
         {id: 4, nomeParceiro: 'TESTE 4'},
     ])
 
+    
 
  return (
    <View style={Styles.container}>
