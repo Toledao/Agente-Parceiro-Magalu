@@ -28,7 +28,7 @@ export default function Agentes() {
             <FlatList
             data={arrayAgentes}
             renderItem={({item}) => 
-            <CardAgentes data={item}/>
+            <CardAgentes data={item} pressionar={"AgentesDetalhes"}/>
             }
             />
         </View>
