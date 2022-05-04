@@ -28,10 +28,11 @@ export default function Login() {
 
   //this.TextInputEmail.clear()
   
-
+  
 
 
   useEffect(()=>{
+    
     if(!isLoadingState){
       
       if (islogged){
@@ -55,6 +56,7 @@ export default function Login() {
     setIsloading(true)
     //para n ter que ficar logando sempre
     navigation.navigate("TelaInicial")
+    setIsloading(false)
     //navigation.navigate("TelaInicialADM")
     
     //produção

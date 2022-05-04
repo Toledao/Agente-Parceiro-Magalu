@@ -10,6 +10,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
 import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
 import Agentes from './sources/pages/Administrativo/Agentes';
+import Opotunidades from './sources/pages/Oportunidades'
 import { Provider } from 'react-redux';
 import store, {persistor} from './sources/store';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -111,6 +112,18 @@ export default function AgenteParceiro() {
                }}
           />
           <Stack.Screen 
+          name="Oportunidades" 
+          component={Opotunidades}
+          options={{ 
+            title: '',
+            headerStyle:{
+              backgroundColor: '#0086FE'
+            },
+            headerTintColor: '#FFF',
+            headerShown: true,
+            headerShadowVisible: false,
+            headerBackTitle: 'Voltar',
+               }}
           name="AgentesCadAgente" 
           component={AgentesCadAgente}
           options={{ 
