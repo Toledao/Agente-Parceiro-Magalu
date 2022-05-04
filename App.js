@@ -145,6 +145,8 @@ export default function AgenteParceiro() {
             headerShadowVisible: false,
             headerBackTitle: 'Voltar',
                }}
+          />
+          <Stack.Screen 
           name="AgentesCadAgente" 
           component={AgentesCadAgente}
           options={{ 
