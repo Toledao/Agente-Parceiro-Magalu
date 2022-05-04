@@ -74,8 +74,8 @@ export default function TelaInicial() {
                 <Atalho icone='list' navigate='CheckList' nomeatalho="Checklist Avulso" />
                 <Atalho icone='person-add-outline' navigate='Oportunidades' nomeatalho="Oportunidades" />
                 <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
+                <Atalho icone='list' navigate='ListaRoteiro' nomeatalho="Roteiro" />
+                <Atalho icone='list' navigate='TelaInicialADM' nomeatalho="Tela ADM TESTE" />
                 <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
                 <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
                 <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />

@@ -38,6 +38,7 @@ export default function ListaParceiro() {
         {id: 4, nomeParceiro: 'TESTE 4'},
     ])
 
+
  return (
    <View style={Styles.container}>
        <Loading isLoading={isloading}/>
