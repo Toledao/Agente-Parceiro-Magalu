@@ -47,6 +47,16 @@ export default function (state = initialState, action){
         case types.AUTH_DESLOGAR:
             return initialState
 
+
+        case types.AUTH_REFRESHTOKEN:
+            newState = { ...state}
+            newState.user.token = action.payload.token
+            if(action.payload.refreshToken != ""){
+                newState.user.refreshToken = action.payload.refreshToken
+            }
+            return newState
+
+
         default:
             return state
     }

@@ -7,10 +7,13 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function ScrollParceiros({data}) {
     const navigation = useNavigation()
+
+    const dados = { ...data}
+
  return (
     <TouchableOpacity onPressOut={() => navigation.navigate("NewVisitaDate")}>
         <View style={Styles.container}>
-            <Text style={Styles.txtNome}>{data.nomeParceiro}</Text>
+            <Text style={Styles.txtNome}>{dados.nome}</Text>
             <Icon style={Styles.icone} size={32} name='chevron-forward-outline' color="#0086FE" />
         </View>
     </TouchableOpacity>
