@@ -128,7 +128,7 @@ export default function AgenteParceiro() {
           name="AgentesDetalhes" 
           component={AgentesDetalhes}
           options={{ 
-          title: '',
+          title: 'Detalhes do Agente',
           headerStyle:{
             backgroundColor: '#0086FE'
           },
