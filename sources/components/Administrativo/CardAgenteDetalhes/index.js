@@ -2,26 +2,23 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-export default function CardAgentes({data, pressionar}) {
-
-    const navigation = useNavigation()
+export default function CardAgentesDetalhes({data}) {
 
  return (
-    <TouchableOpacity style={Styles.container} onPress={() =>  navigation.navigate(pressionar)}>
+    <TouchableOpacity style={Styles.container}>
         <View style={Styles.areaNomebtn}>
-            <Text style={Styles.txtNome} numberOfLines={1}>{data.nomeAgente}</Text>
+            <Text style={Styles.txtNome} numberOfLines={1}>{data.nomeDetalhe}</Text>
             <Icon style={Styles.icone} size={32} name='chevron-forward-outline' color="#0086FE" />
         </View>
         <View style={Styles.areaQtd}>
             <View>
-                <Text style={Styles.txtinfo}>Quantidade de Sellers</Text>
-                <Text style={Styles.txtinforesp}>{data.qtdSeller}</Text>
+                <Text style={Styles.txtinfo}>{data.desc1}</Text>
+                <Text style={Styles.txtinforesp}>{data.resp1}</Text>
             </View>
             <View>
-                <Text style={Styles.txtinfo}>Quantidade de Visitas</Text>
-                <Text style={Styles.txtinforesp}>{data.qtdVisitas}</Text>
+                <Text style={Styles.txtinfo}>{data.desc2}</Text>
+                <Text style={Styles.txtinforesp}>{data.resp2}</Text>
             </View>
         </View>
     </TouchableOpacity>
@@ -48,11 +45,12 @@ const Styles = EStyleSheet.create({
     areaQtd:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: '1rem'
+        paddingHorizontal: '1.8rem'
     },
     txtinfo:{
         fontSize: '0.9rem',
-        textAlign: 'center'
+        textAlign: 'center',
+        width: "100%"
     },
     areaNomebtn:{
         flexDirection: 'row',

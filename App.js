@@ -13,6 +13,8 @@ import Agentes from './sources/pages/Administrativo/Agentes';
 import { Provider } from 'react-redux';
 import store, {persistor} from './sources/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import AgentesCadAgente from './sources/pages/Administrativo/AgentesCadAgente';
+import AgentesDetalhes from './sources/pages/Administrativo/AgentesDetalhes';
 
 export default function AgenteParceiro() {
 
@@ -108,6 +110,34 @@ export default function AgenteParceiro() {
             headerBackTitle: 'Voltar',
                }}
           />
+          <Stack.Screen 
+          name="AgentesCadAgente" 
+          component={AgentesCadAgente}
+          options={{ 
+          title: '',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
+          <Stack.Screen 
+          name="AgentesDetalhes" 
+          component={AgentesDetalhes}
+          options={{ 
+          title: 'Detalhes do Agente',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PersistGate>
@@ -118,5 +148,6 @@ export default function AgenteParceiro() {
 EStyleSheet.build({ // VARIÁVEIS GLOBAIS
   $background: '#0086FE',
   $PrimaryBTN: "#58c22e",
-  $txtcolor: '#FFF'
+  $txtcolor: '#FFF',
+  $txtTitulo: '1.8rem'
 })

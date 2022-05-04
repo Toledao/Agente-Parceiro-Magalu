@@ -11,7 +11,7 @@ export default function AtalhosAgente() {
 
         {/* Atalho 1 */}
 
-        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('Detalhes')}>  
+        <TouchableOpacity style={Styles.atalho} onPress={() => navigation.navigate('AgentesCadAgente')}>  
             {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             <View style={Styles.areaIMG} >
                 <Icon name="person-add-outline" size={40} color={"#0086FE"}/>
