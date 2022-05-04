@@ -18,8 +18,11 @@ import store, {persistor} from './sources/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import AgentesCadAgente from './sources/pages/Administrativo/AgentesCadAgente';
 import AgentesDetalhes from './sources/pages/Administrativo/AgentesDetalhes';
+import { injectStore } from './sources/services/axios';
 
 export default function AgenteParceiro() {
+
+  injectStore(store)
 
   const Stack = createNativeStackNavigator();
 

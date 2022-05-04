@@ -53,15 +53,15 @@ export default function Login() {
 
     setIsloading(true)
     //para n ter que ficar logando sempre
-    navigation.navigate("TelaInicial")
+    //navigation.navigate("TelaInicial")
     //navigation.navigate("TelaInicialADM")
     
-    setIsloading(false)
+    //setIsloading(false)
 
     //produção
-    //dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
-    // textSenha.current.clear()
-    // textEmail.current.clear()
+    dispatch(AuthAction.logarRequest({email:Email, senha:Senha}))
+    textSenha.current.clear()
+    textEmail.current.clear()
   }
 
   return (
