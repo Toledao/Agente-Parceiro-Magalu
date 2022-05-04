@@ -5,7 +5,6 @@ import ScrollParceiros from '../../components/ScrollParceiros';
 import Styles from './style';
 
 export default function ListaParceiro() {
-
 const [arrayParceiros, setarrayParceiros] = useState([
     {id: 1, nomeParceiro: 'TESTE 1'},
     {id: 2, nomeParceiro: 'TESTE 2'},
@@ -29,6 +28,7 @@ const [arrayParceiros, setarrayParceiros] = useState([
             <FlatList
             style={Styles.scrollVisitas}
             data={arrayParceiros}
+            disableScrollViewPanResponder = {true}
             keyExtractor={(item) => item.id}
             renderItem={ ({item}) =>
             <ScrollParceiros data={item} />

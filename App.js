@@ -10,6 +10,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import CheckList from './sources/pages/CheckList';
 import ResetSenha from './sources/pages/ResetSenha';
 import TelaInicialADM from './sources/pages/Administrativo/TelaInicialADM';
+import NewVisitaDate from './sources/pages/NewVisitaDate';
 import Agentes from './sources/pages/Administrativo/Agentes';
 import Opotunidades from './sources/pages/Oportunidades'
 import { Provider } from 'react-redux';
@@ -89,6 +90,20 @@ export default function AgenteParceiro() {
           component={CheckList}
           options={{ 
           title: 'CheckList',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar',
+             }}
+          />
+          <Stack.Screen 
+          name="NewVisitaDate" 
+          component={NewVisitaDate}
+          options={{ 
+          title: '',
           headerStyle:{
             backgroundColor: '#0086FE'
           },
