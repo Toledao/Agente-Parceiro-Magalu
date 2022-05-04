@@ -69,15 +69,21 @@ export default function Login() {
     <SafeAreaView style={Styles.container}>
       <Loading isLoading={isloading}/>
         <View style={Styles.areaLogin}>
-        <View style={Styles.loginimagem}>
-          <Image source={require('../../static/Logo/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
-        </View>
+          <View style={Styles.loginimagem}>
+            <Image source={require('../../static/Logo/LOGOAGENTE.png')} style={{height: 150, width: 300}}  /> 
+          </View>
 
-        <TextInput style={Styles.inputs} keyboardType="email-address" placeholder="Digite seu e-mail" onChangeText={setEmail} ref={textEmail}/>
-        <TextInput style={Styles.inputs} secureTextEntry placeholder="Senha" onChangeText={setSenha} ref={textSenha}/>
-        <TouchableOpacity style={Styles.btnLogin} onPressOut={() => Logar()}>
-            <Text style={Styles.txtLogin}>Fazer Login</Text>
-        </TouchableOpacity>
+          <TextInput style={Styles.inputs} keyboardType="email-address" placeholder="Digite seu e-mail" onChangeText={setEmail} ref={textEmail}/>
+          <TextInput style={Styles.inputs} secureTextEntry placeholder="Senha" onChangeText={setSenha} ref={textSenha}/>
+          <TouchableOpacity style={Styles.btnLogin} onPressOut={() => Logar()}>
+              <Text style={Styles.txtLogin}>Fazer Login</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={Styles.btnforgotsenha} onPressOut={() => navigation.navigate("ResetSenha")}>
+              <Text style={Styles.txtLogin}>Esqueci a senha</Text>
+          </TouchableOpacity>
+
+
         </View>
 
         <AwesomeAlert

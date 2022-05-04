@@ -34,6 +34,9 @@ export default EStyleSheet.create({
     txtLogin:{
         fontSize: "1rem",
         color: "#fff",
+    },
+    btnforgotsenha:{
+        marginTop:"3rem"
     }
     
 
