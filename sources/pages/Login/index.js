@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Loading';
 import * as AuthAction from '../../store/modules/auth/actions'
 import AwesomeAlert from 'react-native-awesome-alerts';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 
 
 export default function Login() {
