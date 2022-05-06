@@ -9,7 +9,7 @@ export default Styles = EStyleSheet.create({
         flex: 7,
     },
     areaForms:{
-        flex: 22,
+        flex: 10,
         backgroundColor: '#FFF',
         borderTopLeftRadius: 7,
         borderTopRightRadius: 7,
@@ -57,6 +57,7 @@ export default Styles = EStyleSheet.create({
         fontWeight: 'bold'
     },
     input:{
+        height: '2.5rem',
         borderColor: "black",
         borderWidth: 1,
         borderRadius: 20,
@@ -72,8 +73,5 @@ export default Styles = EStyleSheet.create({
     },
     AreaPerguntaend:{
         width:'40%',
-        
-    },
-
-    
+    }, 
 })

@@ -11,11 +11,11 @@ export default EStyleSheet.create({
         marginBottom: '10%'
     },
     areaHeader:{
-        flex: 8,
+        flex: 5.7,
         marginHorizontal: "1.5rem"
     },
     areaAtalhos:{
-        flex: 10,
+        flex: 6,
     },
     scrollVisitas:{
         flex: 20,

@@ -17,11 +17,13 @@ export default function ScrollVisitas({data, listagem = false}) {
     return (
         <TouchableOpacity style={Styles.card}>  
               {/*Talvez eu troque o TouchanleOpacity, ja q ele é meio Meh.. */}
-            <Text style={Styles.txtParceiro}>{Nome}</Text>
+            <Text style={Styles.txtParceiro} numberOfLines={1}>{Nome}</Text>
 
             <View style={Styles.descricao}>
-                <Text style={Styles.txtdesc}>Bairro: {Bairro}</Text>
-                <View>
+                <View style={Styles.areaInfos}>
+                 <Text style={Styles.txtdesc} numberOfLines={2}>Bairro: {Bairro}</Text>
+                </View>
+                <View style={Styles.areaInfos}>
                     <Text style={listagem == true ? Styles.txtdesc : {display: "none"}}>Dia: {moment(Data).format('L')}</Text>
                     <Text style={Styles.txtdesc}>Horario: {Horario}</Text>
                 </View>
@@ -30,7 +32,7 @@ export default function ScrollVisitas({data, listagem = false}) {
             <View style={Styles.icons}>
                 <Icon name="create-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
                 <Icon name="list" size={35} style={Styles.icon} onPress={() => navigation.navigate('CheckList')}/>
-                <Icon name="information-circle-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Login')}/>
+                <Icon name="information-circle-outline" size={35} style={Styles.icon} onPress={() => navigation.navigate('Detalhes')}/>
                 {/* Botei para voltar ao Login, dps trocar para a tela especifico */}
             </View>
         </TouchableOpacity>
@@ -67,5 +69,8 @@ const Styles = EStyleSheet.create({
     },
     icon:{
         color:'$background'
+    },
+    areaInfos:{
+        width: '73%'
     }
 })

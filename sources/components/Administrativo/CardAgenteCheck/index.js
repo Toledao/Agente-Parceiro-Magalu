@@ -4,24 +4,20 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { useNavigation } from '@react-navigation/native';
 
-export default function CardAgentesDetalhes({data, navegartela}) {
+export default function CardAgenteCheck({data}) {
 
     const navigation = useNavigation();
 
  return (
-    <TouchableOpacity style={Styles.container} onPress={() => navigation.navigate(navegartela)}>
+    <TouchableOpacity style={Styles.container}>
         <View style={Styles.areaNomebtn}>
-            <Text style={Styles.txtNome} numberOfLines={1}>{data.nomeDetalhe}</Text>
+            <Text style={Styles.txtNome} numberOfLines={1}>{data.nomeCheck}</Text>
             <Icon style={Styles.icone} size={32} name='chevron-forward-outline' color="#0086FE" />
         </View>
         <View style={Styles.areaQtd}>
             <View>
-                <Text style={Styles.txtinfo}>{data.desc1}</Text>
-                <Text style={Styles.txtinforesp}>{data.resp1}</Text>
-            </View>
-            <View>
-                <Text style={Styles.txtinfo}>{data.desc2}</Text>
-                <Text style={Styles.txtinforesp}>{data.resp2}</Text>
+                <Text style={Styles.txtinfo}>Data e Hora</Text>
+                <Text style={Styles.txtinforesp}>{data.data}</Text>
             </View>
         </View>
     </TouchableOpacity>
@@ -34,7 +30,7 @@ const Styles = EStyleSheet.create({
         backgroundColor : '#FFF',
         borderRadius: "1rem",
         paddingVertical: '0.8rem',
-        marginBottom: '1rem',
+        marginVertical: '0.8rem'
     },
     txtNome:{
         fontSize: '1.4rem',

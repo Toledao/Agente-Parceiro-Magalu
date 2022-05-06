@@ -14,13 +14,13 @@ const Styles = EStyleSheet.create({
         flex: 5,
         backgroundColor: '#DCD6D6',
         alignItems: "center",
-        
     },
     txtParceiro:{
         color: '$txtcolor',
         fontSize: '2rem'
     },
     inputPesquisa:{
+        height: '2.5rem',
         width: '17rem',
         marginLeft: '1.5rem',
         borderColor: 'black',

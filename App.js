@@ -18,6 +18,7 @@ import store, {persistor} from './sources/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import AgentesCadAgente from './sources/pages/Administrativo/AgentesCadAgente';
 import AgentesDetalhes from './sources/pages/Administrativo/AgentesDetalhes';
+import AgentesListaCheck from './sources/pages/Administrativo/AgentesListaCheck';
 
 export default function AgenteParceiro() {
 
@@ -165,6 +166,20 @@ export default function AgenteParceiro() {
           component={AgentesDetalhes}
           options={{ 
           title: 'Detalhes do Agente',
+          headerStyle:{
+            backgroundColor: '#0086FE'
+          },
+          headerTintColor: '#FFF',
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackTitle: 'Voltar'
+             }}
+          />
+          <Stack.Screen 
+          name="AgentesListaCheck" 
+          component={AgentesListaCheck}
+          options={{ 
+          title: 'Lista de CheckList',
           headerStyle:{
             backgroundColor: '#0086FE'
           },

@@ -26,7 +26,7 @@ export default function Atalho({nomeatalho, icone, navigate}) {
 
 const Styles = EStyleSheet.create({
     atalho:{
-        paddingHorizontal: '0.5rem'
+        paddingHorizontal: '0.8rem'
     },
     areaIMG:{
         width: "4rem",

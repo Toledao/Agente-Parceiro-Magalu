@@ -4,10 +4,13 @@ import Styles from './styles';
 
 
 export default function AgentesCadAgente() {
+
+  const id = "1"
+
  return (
    <SafeAreaView style={Styles.container}>
     <View style={Styles.areaTitulo}>
-      <Text style={Styles.txtTitulo}>NOVO AGENTE MAGALU</Text>
+      <Text style={Styles.txtTitulo}>{id == "" ? "Novo Agente Magalu" : "Editar Agente"}</Text>
     </View>
     <ScrollView style={Styles.areaFormulario}>
       <View style={Styles.forms}>
@@ -40,6 +43,11 @@ export default function AgentesCadAgente() {
       <View style={Styles.AreaBTN}>
         <TouchableOpacity style={Styles.btnCadastrar}>
           <Text>Cadastrar Agente</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={Styles.AreaBTN}>
+        <TouchableOpacity style={[Styles.btnCadastrar, {backgroundColor: '#DA3434'}]}>
+          <Text>Excluir agente</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
