@@ -73,8 +73,8 @@ export default function TelaInicial() {
             <ScrollView style={Styles.areaAtalho} horizontal={true} showsHorizontalScrollIndicator={false} >
                 <Atalho icone='list' navigate='CheckList' nomeatalho="Checklist Avulso" />
                 <Atalho icone='person-add-outline' navigate='Oportunidades' nomeatalho="Oportunidades" />
-                <Atalho icone='list' navigate='ListaRoteiro' nomeatalho="Roteiro" />
-                <Atalho icone='list' navigate='TelaInicialADM' nomeatalho="Tela ADM TESTE" />
+                <Atalho icone='map-outline' navigate='ListaRoteiro' nomeatalho="Roteiro" />
+                <Atalho icone='people-outline' navigate='TelaInicialADM' nomeatalho="Administrador" />
             </ScrollView>
         </View>
         <View style={Styles.areaRoteiro}>

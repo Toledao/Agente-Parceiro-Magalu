@@ -41,5 +41,6 @@ const Styles = EStyleSheet.create({
         width: "4rem",
         textAlign: 'center',
         marginTop: '0.3rem',
+
     }
 })
