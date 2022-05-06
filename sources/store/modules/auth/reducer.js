@@ -50,7 +50,6 @@ export default function (state = initialState, action){
 
         case types.AUTH_REFRESHTOKEN:
 
-            console.log(action.payload.token)
             newState = { ...state}
             newState.user.token = action.payload.token
             if(action.payload.refreshToken){

@@ -10,9 +10,8 @@ export const injectStore = _store => {
 
 
 const customaxios = axios.create({
-    baseURL: "http://192.168.1.107:3333/",  //Local Host  POR ALGUM MOTIVO LOCALHOST N FUNCIONA, coloque o ip aqui
-    //baseURL: "http://177.153.33.88"  //Produção Host
-    //headers: {"Authorization": "Bearer " + t}
+    //baseURL: "http://192.168.1.107:3333/",  //Local Host  POR ALGUM MOTIVO LOCALHOST N FUNCIONA, coloque o ip aqui
+    baseURL: "http://177.153.33.88"  //Produção Host
    
 })
 
@@ -36,7 +35,7 @@ customaxios.interceptors.request.use(config => {
   })
 
 function isTokenExpired(errorResponse){
-    if(errorResponse.status = 401){
+    if(errorResponse.status == 401){
         return true
     }
 
