@@ -7,13 +7,9 @@ import axios from '../../../services/axios';
 
 function* ParceiroRequest(payload){
     try {
-        const {agenteId, token} = payload.payload
-
-        axios.defaults.headers.common['Authorization'] = "Bearer " + token
+        const {agenteId} = payload.payload
 
         const response = yield call(axios.get, '/Parceiro',{params: {agenteId: agenteId}})
-
-        console.log(response)
 
         yield put(action.ParceiroCarregarSucesso(response.data));
     } catch (error){

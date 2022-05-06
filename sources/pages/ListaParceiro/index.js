@@ -17,17 +17,14 @@ export default function ListaParceiro() {
     const done = useSelector(state => state.Parceiro.done)
     const dispatch = useDispatch()
     const arrayParceiro = useSelector(state => state.Parceiro.parceiros)
-
+    
     useEffect(()=>{
         if(!carregado){
-            if(done){
-                if(erro){
-                    console.warn("deu erro")
-                }else{
-                    dispatch(ParceiroAction.ParceiroCarregarRequest({agenteId,token}))
-                }
-            }
+            dispatch(ParceiroAction.ParceiroCarregarRequest({agenteId}))
         }
+        if(erro){
+            console.warn("deu erro")
+        }    
     })
 
 
