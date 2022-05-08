@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, FlatList, Modal, TouchableWithoutFeedback, TextInput, KeyboardAvoidingView } from 'react-native';
 import Styles from './styles';
 import DatePicker from 'react-native-date-picker'
-import { ColorPicker } from "react-native-btr";
+import { ColorPicker, Tag } from "react-native-btr";
 import moment from 'moment';
+import Loading from '../../components/Loading';
+import * as TagAction from '../../store/modules/tags/actions'
+import { useDispatch, useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import 'moment/locale/pt-br'
 
 
 export default function NewVisitaDate() {
+
+    
+    const carregado = useSelector(state => state.Tags.carregado)
+    const agenteId = useSelector(state => state.Auth.user.id)
+    const isloading = useSelector(state => state.Tags.isloading)
+    const erro = useSelector(state => state.Tags.erro)
+    const dispatch = useDispatch()
+    const ListaTags = useSelector(state => state.Tags.tags)
+    const TagAdicionado = useSelector(state => state.Tags.tagAdicionado)
+    
 
 
     const [selectedColor, setSelectedColor] = useState("");
@@ -20,6 +33,22 @@ export default function NewVisitaDate() {
 
 
 
+    useEffect(()=>{
+        if(!carregado){
+            dispatch(TagAction.TagsCarregarRequest({agenteId}))
+        }
+        if(erro){
+            console.warn("deu erro")
+        }
+        if(TagAdicionado.id){
+            console.log("CaiuAqui")
+            addTag(TagAdicionado);
+            dispatch(TagAction.removeAdicionado())
+            dispatch(TagAction.TagsCarregarRequest({agenteId}))
+        }    
+    })
+
+
     const listaDatasInitial = [{ id: 1, data: new Date(), open: false }]
     const [dates, setDates] = useState(listaDatasInitial)
     const [extraData, setExtraData] = useState('')
@@ -28,16 +57,9 @@ export default function NewVisitaDate() {
         { id: '2', nome: 'Teste2', cor: '#22EE99' },
         { id: '3', nome: 'Teste32', cor: '#99FF66' }
     ]
-    const listaTagsNovoInitial = [
-        { id: '1231', nome: 'TesteNovo', cor: '#FF2244' },
-        { id: '231231', nome: 'Teste2Novo', cor: '#22EE99' },
-        { id: '312312', nome: 'Teste32Novo', cor: '#99FF66' }
-    ]
+
     const [ShowModal, setShowModal] = useState(false)
-
-
     const [tags, setTags] = useState(listaTagsInitial)
-    const [tagsNovo, settagsNovo] = useState(listaTagsNovoInitial)
     const [novaTags, setNovaTags] = useState(false)
 
     let ultimotap = null;
@@ -59,28 +81,31 @@ export default function NewVisitaDate() {
     }
 
     function addTag(item) {
-        const newlist = tags;
-        newlist.push(item)
+        let existe = false
+        const newlist = tags.map((itemlista) => {
+            if(itemlista.id == item.id){
+                existe = true;
+            }
+            return itemlista
+        });
+        if(!existe){
+            newlist.push(item)
+        }
         setTags(newlist)
         setExtraData(new Date())
         setShowModal(!ShowModal)
+
+        if(novaTags == true){
+            setNovaTags(!novaTags)
+            setTextTag("")
+            setColor("")
+        }
+
     }
 
     function CriatTag(item){
-        //Teste
-        const id = tags.length + 1
-
-        const Tag = { id, ...item}
-
-        const newlist = tags;
-        newlist.push(Tag)
-        setTags(newlist)
-        const newListNovoTags = tagsNovo
-        newListNovoTags.push(Tag)
-        settagsNovo(newListNovoTags)
-        setExtraData(new Date())
-        setShowModal(!ShowModal)
-        setNovaTags(!novaTags)
+        const NovaTag = {agenteId: agenteId, ...item}
+        dispatch(TagAction.TagsAddTagRequest(NovaTag));
     }
 
 
@@ -137,6 +162,7 @@ export default function NewVisitaDate() {
 
     return (
         <SafeAreaView style={Styles.container}>
+            <Loading Loading={isloading}/>
             <View style={Styles.areaCliente}>
                 <Text style={Styles.txtareaCliente}>CNPJ</Text>
                 <Text style={Styles.txtresultParceiro}>02.546.870/0001-70</Text>
@@ -218,9 +244,9 @@ export default function NewVisitaDate() {
                                                     <Text style={Styles.textTags}>Tags Existentes</Text>
 
                                                     <FlatList
-                                                        data={tagsNovo}
-                                                        extraData={tagsNovo}
-                                                        style={{ flexDirection: "row", flexWrap: "wrap" }}
+                                                        data={ListaTags}
+                                                        extraData={ListaTags}
+                                                        style={Styles.listaTags}
                                                         renderItem={({ item }) =>
                                                             <TouchableOpacity style={[{ backgroundColor: item.cor }, Styles.tag]} onPress={() => addTag(item)}>
                                                                 <Text style={{ color: "#000" }}>{item.nome}</Text>

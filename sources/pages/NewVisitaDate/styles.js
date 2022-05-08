@@ -163,6 +163,9 @@ const Styles = EStyleSheet.create({
         justifyContent: "center",
         marginVertical: '1.2rem',
         paddingVertical: '0.3rem'
+    },
+    listaTags:{
+        height: '8rem'
     }
 })
 
