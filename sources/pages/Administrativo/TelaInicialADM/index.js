@@ -37,12 +37,6 @@ export default function TelaInicialADM() {
             <ScrollView style={Styles.areaAtalho} horizontal={true} showsHorizontalScrollIndicator={false} >
                 <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
                 <Atalho icone='person-add-outline' navigate='Oportunidades' nomeatalho="Oportunidades" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
-                <Atalho icone='list' navigate='Descricao' nomeatalho="Checklist Avulso" />
             </ScrollView>
         </View>
             <View style={Styles.scrollVisitas}>

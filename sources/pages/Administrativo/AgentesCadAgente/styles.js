@@ -6,7 +6,7 @@ const Styles = EStyleSheet.create({
         backgroundColor: '$background'
     },
     areaTitulo:{
-        flex: 0.25,
+        flex: 0.08,
         alignItems: "center",
         marginTop: "15%"
     },
@@ -15,7 +15,8 @@ const Styles = EStyleSheet.create({
         fontSize: '$txtTitulo',
         textAlign: "center",
         width: "80%",
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: '-7%'
     },
     areaFormulario:{
         flex: 1,
@@ -43,14 +44,13 @@ const Styles = EStyleSheet.create({
         borderRadius: '0.4rem',
         alignItems: 'center',
         justifyContent: "center",
-        marginBottom: '1.2rem',
+        marginBottom: '1rem',
     },
     AreaBTN:{
         width: '100%',
         height: '3rem',
         alignItems: 'center',
-        marginVertical: '1rem',
-        marginTop: '11%'
+        marginTop: '8%'
     }
 
 
