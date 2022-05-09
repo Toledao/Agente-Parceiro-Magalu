@@ -21,6 +21,7 @@
     "react": "17.0.2",
     "react-native": "0.68.1",
     "react-native-awesome-alerts": "^1.5.2",
+    "react-native-btr": "^2.1.3",
     "react-native-confirmation-code-field": "^7.3.0",
     "react-native-date-picker": "^4.2.1",
     "react-native-extended-stylesheet": "https://github.com/yvbeek/react-native-extended-stylesheet",
