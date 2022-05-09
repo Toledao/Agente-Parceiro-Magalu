@@ -36,15 +36,17 @@ const Styles = EStyleSheet.create({
         paddingVertical: '0.8rem',
         paddingHorizontal: '1rem',
         marginBottom: '1rem',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     data:{
-        fontSize: "1.1rem",
-        fontWeight: "bold"
+        fontSize: "0.9rem",
+        fontWeight: "bold",
+        textAlignVertical: "center"
     },
     titulodata:{
         fontSize: '1.3rem',
-        marginBottom: '0.4rem'
+        marginBottom: '0.4rem',
+        textAlign:"center"
     },
     PickerCard:{
         width: '15rem',
@@ -52,17 +54,20 @@ const Styles = EStyleSheet.create({
         borderRadius: '1rem'
     },
     areaPicker:{
-        alignItems: 'center'
+        alignItems: 'center'    
     },
     PickerIntervalo:{
         width:'100%'
     },
     areaTags:{
-        backgroundColor: '#FF0000',
-        width: '100%'
+        backgroundColor: '#FFF',
+        borderRadius: '1rem',
+        flexDirection: "row",
+        padding: '0.3rem',
+        //width: '100%'
     },
     areaData:{
-        width: '60%', alignItems: 'center'
+        //alignItems: 'center'
     },
     AreaBTN:{
         width: '100%',
@@ -91,6 +96,76 @@ const Styles = EStyleSheet.create({
     },
     texto:{
         fontSize: "1.1rem"
+    },
+    tags:{
+        flex: 8,
+        justifyContent: "center"
+    },
+    addTag:{
+        textAlign:"right",
+        justifyContent: 'center',
+        marginLeft: '1rem',
+        flex: 2
+    },
+    tag:{
+        borderRadius: "2rem", 
+        paddingHorizontal: "0.5rem", 
+        paddingVertical: "0.1 rem",  
+        margin: "0.1rem",
+        alignItems:"center"
+    },
+    areaModal:{
+        backgroundColor: "#FFF",
+        borderRadius: "1rem",
+        width: '60%'
+    },
+    fundoModal:{
+        flex: 1, 
+        justifyContent: "center", 
+        alignItems: "center",
+        backgroundColor: "rgba(0,0,0,0.5)"
+    },
+    ModalTitulo:{
+        alignItems: "center",
+        margin: '0.2rem'
+    },
+    Titulo:{
+        color: "#000",
+        fontSize: "1.2rem"
+    },
+    ModalCorpo:{
+        alignItems: "center",
+        margin: '0.4rem'
+    },
+    textTags:{
+        color: "#000",
+        fontSize: "0.9rem"
+    },
+    areaModalNovaTag:{
+        backgroundColor: "#FFF",
+        borderRadius: "1rem",
+        width: '60%',
+        marginTop: '2rem'
+    },
+    input:{
+        backgroundColor: "#EEE",
+        borderRadius: '0.5rem',
+        width: '90%',
+        paddingHorizontal: '1rem',
+        height: '2.6rem',
+        fontSize: '1rem'
+    },
+    btnaddTags:{
+        backgroundColor: '$PrimaryBTN',
+        width: '75%',
+        borderRadius: '0.4rem',
+        alignItems: 'center',
+        justifyContent: "center",
+        marginVertical: '1.2rem',
+        paddingVertical: '0.3rem'
+    },
+    listaTags:{
+        height: '8rem'
     }
 })
 
